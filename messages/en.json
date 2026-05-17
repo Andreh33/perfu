@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "Perfumes Dubai · Maison de Parfum",
+    "description": "The art of fragrance, distilled from desert and time."
+  },
+  "common": {
+    "site_name": "Perfumes Dubai"
+  },
+  "navbar": {
+    "maison": "MAISON",
+    "atelier": "ATELIER",
+    "perfumeur": "PERFUMEUR",
+    "bespoke": "BESPOKE",
+    "journal": "JOURNAL",
+    "search": "Search",
+    "language": "Language",
+    "account": "Account",
+    "cart": "Cart"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "EST. DUBAI · MMXXVI · MAISON DE PARFUM",
+      "title": "The art of fragrance, distilled from desert and time.",
+      "subtitle": "Each essence, a memory. Each flacon, a horizon.",
+      "cta": "ENTER THE ATELIER →"
+    },
+    "links": {
+      "styleguide": "View design system →"
+    }
+  },
+  "footer": {
+    "newsletter_title": "For the rare and the rumored.",
+    "newsletter_sub": "Receive new releases, perfumer interviews, and private events three times a year. No more.",
+    "boutique_label": "BOUTIQUE",
+    "boutique_address": "City Walk, Building 4, Ground Floor — Dubai, United Arab Emirates",
+    "boutique_hours": "Open daily · 10:00 - 22:00",
+    "copyright": "© MMXXVI Perfumes Dubai"
+  },
+  "not_found": {
+    "title": "This fragrance has evaporated.",
+    "subtitle": "The page you seek has dissolved into air.",
+    "cta": "RETURN TO THE ATELIER →"
+  },
+  "locale_switcher": {
+    "label": "Change language",
+    "es": "Español",
+    "en": "English",
+    "ar": "العربية"
+  }
+}

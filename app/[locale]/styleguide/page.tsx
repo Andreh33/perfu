@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { Link } from "@/components/ui/Link";
 import { Button } from "@/components/ui/Button";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 
 export const metadata: Metadata = {
   title: "Style Guide · Perfumes Dubai",
   description: "Internal design system reference. Not for public consumption.",
   robots: "noindex, nofollow",
 };
+
+type LocaleParams = { locale: string };
 
 type Swatch = { token: string; hex: string; label: string };
 
@@ -121,7 +125,14 @@ const easingCurves = [
   { name: "--ease-tide", label: "Tide" },
 ];
 
-export default function StyleguidePage() {
+export default async function StyleguidePage({
+  params,
+}: {
+  params: Promise<LocaleParams>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <style>{`
@@ -306,6 +317,26 @@ export default function StyleguidePage() {
                 />
               </div>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* H · Locale switcher QA — temporary, moves to Navbar in phase 3 */}
+      <Section spacing="default">
+        <Container width="wide">
+          <Text as="h2" variant="headline" className="mb-[var(--space-7)]">
+            h · Locale switcher
+          </Text>
+          <div className="flex items-start gap-[var(--space-7)] border border-[var(--ink-500)] p-[var(--space-7)]">
+            <div className="flex flex-col gap-[var(--space-3)]">
+              <Text variant="metadata" tone="muted">
+                interactive · client component
+              </Text>
+              <Text variant="body-s" tone="dim">
+                Three dots open a small menu. Active locale carries a gold dot.
+              </Text>
+            </div>
+            <LocaleSwitcher />
           </div>
         </Container>
       </Section>
