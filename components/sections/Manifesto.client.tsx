@@ -120,32 +120,22 @@ export function ManifestoClient({ phrases, labels }: ManifestoClientProps) {
       });
       // p3 has a paragraph + canvas; canvas opacity managed by its parent.
 
-      // Master timeline drives word reveals + phrase fades. Bound to the same
-      // ScrollTrigger as the pin so progress is shared.
+      // Master timeline driven by ScrollTrigger WITHOUT pin. The pinning
+      // visual effect is achieved with CSS `position: sticky` on the inner
+      // pinTarget (see JSX below). This avoids GSAP wrapping the pinTarget
+      // in a `<div class="pin-spacer">`, which would break React 19's view
+      // of the DOM tree (containerRef expects pinTargetRef as a direct
+      // child, but the spacer would sit between them, causing removeChild
+      // NotFoundError during reconciliation).
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: pinTarget,
+          trigger: container,
           start: "top top",
           end: "+=400%",
           scrub: 1,
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             progressRef.current = self.progress;
-          },
-          onEnter: () => {
-            pinTarget.style.willChange = "transform";
-          },
-          onLeave: () => {
-            pinTarget.style.willChange = "";
-          },
-          onLeaveBack: () => {
-            pinTarget.style.willChange = "";
-          },
-          onEnterBack: () => {
-            pinTarget.style.willChange = "transform";
           },
         },
       });
@@ -363,11 +353,17 @@ export function ManifestoClient({ phrases, labels }: ManifestoClientProps) {
   }
 
   // ── Motion path ─────────────────────────────────────────────────────
+  // The outer container reserves 5x viewport-height so the user has scroll
+  // distance to drive the timeline (ScrollTrigger end = "+=400%"). The inner
+  // pinTarget uses CSS `position: sticky; top: 0` to stay visible during the
+  // scroll — a React-safe alternative to ScrollTrigger.pin:true which would
+  // wrap the element in a `<div class="pin-spacer">` and break the DOM tree
+  // that React reconciles against.
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div
         ref={pinTargetRef}
-        className="h-screen w-full flex items-center justify-center relative px-[var(--space-6)]"
+        className="h-screen w-full flex items-center justify-center relative px-[var(--space-6)] sticky top-0"
         aria-label={labels.frame_caption || undefined}
       >
         {/* Phrase 1 */}
