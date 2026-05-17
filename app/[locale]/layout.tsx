@@ -8,6 +8,11 @@ import {
 } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { fontVariables } from "@/lib/fonts";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { CustomCursor } from "@/components/cursor/CustomCursor";
+import { LenisProvider } from "@/components/layout/LenisProvider";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import "../globals.css";
 
 type LocaleParams = { locale: string };
@@ -59,7 +64,13 @@ export default async function LocaleLayout({
         } bg-[var(--obsidian-400)] text-[var(--ink-100)] antialiased`}
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
+          <LenisProvider>
+            <CustomCursor />
+            <Navbar locale={locale} />
+            <main className="min-h-screen">{children}</main>
+            <Footer locale={locale} />
+            <CookieBanner />
+          </LenisProvider>
         </NextIntlClientProvider>
       </body>
     </html>

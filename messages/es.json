@@ -15,7 +15,9 @@
     "search": "Buscar",
     "language": "Idioma",
     "account": "Cuenta",
-    "cart": "Bolsa"
+    "cart": "Bolsa",
+    "open_menu": "Abrir menú",
+    "close_menu": "Cerrar menú"
   },
   "home": {
     "hero": {
@@ -29,12 +31,69 @@
     }
   },
   "footer": {
-    "newsletter_title": "Para lo escaso y lo susurrado.",
-    "newsletter_sub": "Recibe nuevos lanzamientos, entrevistas con el perfumista y eventos privados tres veces al año. Nada más.",
-    "boutique_label": "BOUTIQUE",
-    "boutique_address": "City Walk, Edificio 4, Planta Baja — Dubái, Emiratos Árabes Unidos",
-    "boutique_hours": "Abierto a diario · 10:00 - 22:00",
-    "copyright": "© MMXXVI Perfumes Dubai"
+    "newsletter": {
+      "title": "Para lo escaso y lo susurrado.",
+      "sub": "Recibe nuevos lanzamientos, entrevistas con el perfumista y eventos privados tres veces al año. Nada más.",
+      "placeholder": "tu correo",
+      "submit_label": "Suscribirse",
+      "success": "Recibido. Quedas en la lista discreta.",
+      "error": "Introduce un correo válido."
+    },
+    "columns": {
+      "maison": {
+        "title": "MAISON",
+        "history": "Historia",
+        "perfumer": "Perfumista",
+        "press": "Prensa",
+        "awards": "Premios"
+      },
+      "atelier": {
+        "title": "ATELIER",
+        "catalogue": "Catálogo",
+        "bestsellers": "Más buscados",
+        "new": "Nuevos lanzamientos",
+        "bespoke": "Hecho a medida"
+      },
+      "contact": {
+        "title": "CONTACTO",
+        "email": "concierge@perfumesdubai.com",
+        "whatsapp": "+971 4 000 0000",
+        "boutique": "Boutique Dubái",
+        "hours": "Lun—Dom · 10:00 - 22:00"
+      },
+      "legal": {
+        "title": "LEGAL",
+        "privacy": "Privacidad",
+        "terms": "Términos",
+        "cookies": "Cookies",
+        "imprint": "Aviso legal"
+      }
+    },
+    "boutique": {
+      "label": "BOUTIQUE",
+      "city_walk": "CITY WALK",
+      "address": "City Walk, Edificio 4, Planta Baja — Dubái, Emiratos Árabes Unidos",
+      "hours": "Abierto a diario · 10:00 - 22:00",
+      "cta_visit": "VISÍTANOS →"
+    },
+    "bottom": {
+      "copyright": "© MMXXVI Perfumes Dubai · Hecho con paciencia",
+      "currency_label": "Moneda"
+    }
+  },
+  "mobile_menu": {
+    "open": "Abrir menú",
+    "close": "Cerrar menú"
+  },
+  "cookies": {
+    "body": "Respetamos tu visita. No rastreamos más allá de lo esencial.",
+    "persist": "ACEPTAR"
+  },
+  "currency": {
+    "eur": "EUR",
+    "usd": "USD",
+    "aed": "AED",
+    "label": "Moneda"
   },
   "not_found": {
     "title": "Esta fragancia se ha evaporado.",

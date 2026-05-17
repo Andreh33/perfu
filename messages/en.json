@@ -15,7 +15,9 @@
     "search": "Search",
     "language": "Language",
     "account": "Account",
-    "cart": "Cart"
+    "cart": "Cart",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu"
   },
   "home": {
     "hero": {
@@ -29,12 +31,69 @@
     }
   },
   "footer": {
-    "newsletter_title": "For the rare and the rumored.",
-    "newsletter_sub": "Receive new releases, perfumer interviews, and private events three times a year. No more.",
-    "boutique_label": "BOUTIQUE",
-    "boutique_address": "City Walk, Building 4, Ground Floor — Dubai, United Arab Emirates",
-    "boutique_hours": "Open daily · 10:00 - 22:00",
-    "copyright": "© MMXXVI Perfumes Dubai"
+    "newsletter": {
+      "title": "For the rare and the rumored.",
+      "sub": "Receive new releases, perfumer interviews, and private events three times a year. No more.",
+      "placeholder": "your email",
+      "submit_label": "Subscribe",
+      "success": "Received. You are on the quiet list.",
+      "error": "Enter a valid email."
+    },
+    "columns": {
+      "maison": {
+        "title": "MAISON",
+        "history": "History",
+        "perfumer": "Perfumer",
+        "press": "Press",
+        "awards": "Awards"
+      },
+      "atelier": {
+        "title": "ATELIER",
+        "catalogue": "Catalogue",
+        "bestsellers": "Bestsellers",
+        "new": "New releases",
+        "bespoke": "Bespoke"
+      },
+      "contact": {
+        "title": "CONTACT",
+        "email": "concierge@perfumesdubai.com",
+        "whatsapp": "+971 4 000 0000",
+        "boutique": "Dubai Boutique",
+        "hours": "Mon—Sun · 10:00 - 22:00"
+      },
+      "legal": {
+        "title": "LEGAL",
+        "privacy": "Privacy",
+        "terms": "Terms",
+        "cookies": "Cookies",
+        "imprint": "Imprint"
+      }
+    },
+    "boutique": {
+      "label": "BOUTIQUE",
+      "city_walk": "CITY WALK",
+      "address": "City Walk, Building 4, Ground Floor — Dubai, United Arab Emirates",
+      "hours": "Open daily · 10:00 - 22:00",
+      "cta_visit": "VISIT US →"
+    },
+    "bottom": {
+      "copyright": "© MMXXVI Perfumes Dubai · Crafted with patience",
+      "currency_label": "Currency"
+    }
+  },
+  "mobile_menu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "cookies": {
+    "body": "We respect your visit. We don't track beyond what is essential.",
+    "persist": "PERSIST"
+  },
+  "currency": {
+    "eur": "EUR",
+    "usd": "USD",
+    "aed": "AED",
+    "label": "Currency"
   },
   "not_found": {
     "title": "This fragrance has evaporated.",
