@@ -6,7 +6,8 @@ import { Link as I18nLink } from "@/i18n/navigation";
 import { Monogram } from "./Monogram";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { NavbarClient } from "./Navbar.client";
-import { SearchIcon, UserIcon, CartIcon } from "./NavbarIcons";
+import { SearchIcon, UserIcon } from "./NavbarIcons";
+import { CartIconButton } from "@/components/cart/CartIconButton";
 
 interface NavbarProps {
   locale: string;
@@ -22,9 +23,6 @@ export async function Navbar({ locale }: NavbarProps) {
     { key: "bespoke", href: "/bespoke", label: t("bespoke") },
     { key: "journal", href: "/journal", label: t("journal") },
   ] as const;
-
-  // For now the cart badge is static; Zustand store arrives in Phase 10.
-  const cartCount = 0;
 
   return (
     <NavbarClient
@@ -90,20 +88,7 @@ export async function Navbar({ locale }: NavbarProps) {
             <UserIcon />
           </button>
 
-          <button
-            type="button"
-            aria-label={t("cart")}
-            className="relative flex h-9 w-9 items-center justify-center text-[var(--ink-200)] hover:text-[var(--gold-100)] transition-colors duration-[var(--duration-quick)]"
-          >
-            <CartIcon />
-            <span
-              aria-hidden="true"
-              className="absolute -top-0.5 -right-0.5 inline-flex h-[14px] min-w-[14px] items-center justify-center rounded-full bg-[var(--gold-200)] px-[3px] text-[10px] font-medium text-[var(--obsidian-400)] tabular-nums"
-            >
-              {cartCount}
-            </span>
-            <span className="sr-only">{cartCount}</span>
-          </button>
+          <CartIconButton ariaLabel={t("cart")} />
         </div>
       </div>
     </NavbarClient>

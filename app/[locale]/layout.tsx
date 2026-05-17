@@ -13,6 +13,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/cursor/CustomCursor";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { CartSheet } from "@/components/cart/CartSheet";
 import { PreloaderMount } from "./preloader-mount";
 import { RouteCurtain } from "@/components/layout/RouteCurtain";
 import { PatienceToast } from "@/components/easter/PatienceToast";
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
               <RouteCurtain>{children}</RouteCurtain>
             </main>
             <Footer locale={locale} />
+            <CartSheet />
             <CookieBanner />
             <PatienceToast />
           </LenisProvider>

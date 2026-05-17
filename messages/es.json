@@ -105,6 +105,34 @@
     "aed": "AED",
     "label": "Moneda"
   },
+  "cart": {
+    "header": "TU ATELIER",
+    "pieces_one": "{n} PIEZA",
+    "pieces_other": "{n} PIEZAS",
+    "empty": {
+      "title": "El atelier aguarda tu elección.",
+      "cta": "DESCUBRE EL ATELIER →"
+    },
+    "item": {
+      "remove": "Retirar",
+      "decrease": "Reducir cantidad",
+      "increase": "Aumentar cantidad",
+      "ml50": "50 ml",
+      "ml100": "100 ml"
+    },
+    "total": "TOTAL",
+    "checkout": {
+      "cta_single": "PROCEDER AL PAGO →",
+      "cta_multi": "ESCRIBIR AL CONSERJE →",
+      "multi_title": "Para selecciones múltiples, nuestro conserje te acompaña.",
+      "multi_body": "Envía tu selección a concierge@perfumesdubai.com.",
+      "no_link_yet": "Enlace de pago aún sin configurar. El atelier te contactará en 24 horas.",
+      "mailto_subject": "Pedido del atelier · Perfumes Dubai",
+      "mailto_intro": "Buen día, deseo adquirir:"
+    },
+    "add_button": "AÑADIR AL ATELIER",
+    "added_feedback": "Añadido"
+  },
   "not_found": {
     "title": "Esta fragancia se ha evaporado.",
     "subtitle": "La página que buscas se ha disuelto en el aire.",
