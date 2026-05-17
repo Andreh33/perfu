@@ -105,5 +105,70 @@
     "es": "Español",
     "en": "English",
     "ar": "العربية"
+  },
+  "maison": {
+    "eyebrow": "THE ART OF PERFUME",
+    "eyebrow_section": "MAISON",
+    "title": "Letters from the atelier.",
+    "intro_paragraph_1": "We do not measure perfume in millilitres. We measure it in seasons, in the precise hour at which a flower decides to open, in the silence of cellars where copper and oak slowly teach an oil how to speak. Time, here, is the first ingredient — and the most expensive.",
+    "intro_paragraph_2": "What follows is not a brochure. It is four short letters from inside the workshop: the fields at dawn, the alembic at noon, the long sleep of maceration, and the final ceremony of pouring an essence into glass. Read them slowly. The fragrance, like the prose, was never meant to be rushed.",
+    "chapter": {
+      "recolte": {
+        "title_short": "La Récolte",
+        "title": "The fields wake before us.",
+        "_image_query": "rose damascena harvest dawn dark mood",
+        "image_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Rose damascena petals gathered at dawn in a wooden basket.",
+        "paragraphs": [
+          "Before the sun decides where to stand, the pickers are already kneeling. Damascena needs to be cut while the dew still owns its weight; a single hour later and the rose has forgotten itself. We do not own these fields in Grasse, in the Isparta valley, in the white plains of Mysore. We borrow them from the night, and the night charges its rent in patience.",
+          "A kilogram of pure rose absolute will ask for nearly five tonnes of fresh petals — a small mountain of colour reduced to a thimble of soul. The hands that do this work are almost always the hands of women, and almost always silent. There is a kind of prayer in pulling a flower so that the stem does not bruise.",
+          "We have learned, after years, to trust the pickers more than the calendar. When they say the harvest will begin on a Tuesday, it begins on a Tuesday, regardless of what we have written in the catalogue. The flower, after all, is the only honest contract.",
+          "By eleven in the morning the heat has decided. Whatever we did not gather is already lost to the perfume, and now belongs entirely to the bees."
+        ],
+        "pull_quote": "A flower picked one hour too late has already begun to forget its own name."
+      },
+      "alambic": {
+        "title_short": "L'Alambic",
+        "title": "Copper learns the language of steam.",
+        "_image_query": "antique copper alembic distillation steam dark",
+        "image_url": "https://images.unsplash.com/photo-1582106245687-cbb466a9f07f?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Antique copper alembic reflecting low light during distillation.",
+        "paragraphs": [
+          "The petals arrive at the still in shallow wooden crates, still warm, still slightly damp from the field. They are weighed, then poured into the copper belly of the alembic — an instrument designed in the medieval workshops of Andalusia and improved, almost imperceptibly, every century since. Copper, unlike steel, listens.",
+          "Heat is applied carefully, the way a musician approaches a long note. Too quickly and the rose burns; too slowly and the perfume falls asleep before it can rise. Steam climbs through the petals, gathers their oil, condenses in the swan-neck, and falls — drop by drop, hour by hour — into a glass receiver below.",
+          "Eight kilograms of flower will, after a full afternoon, yield perhaps a teaspoon of clear, almost colourless essential oil that smells, improbably, like everything the field was promising at dawn. Alongside it, a fragrant water — the hydrolat — which our perfumer keeps for his own private formulas and almost never sells.",
+          "We have one master distiller. He talks to the copper. He insists it answers."
+        ],
+        "pull_quote": "The fire does not transform the rose; it only convinces the rose to remember itself."
+      },
+      "maceration": {
+        "title_short": "La Macération",
+        "title": "Months of silence, then a single yes.",
+        "_image_query": "wooden barrels cellar dim slow time amber",
+        "image_url": "https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Aged wooden barrels resting in a dim cellar.",
+        "paragraphs": [
+          "Once the perfumer has composed his formula — a long argument between top, heart and base, sometimes resolved in an afternoon, sometimes resisted for years — the perfume is poured into glass and locked away. The cellar is kept at a constant fourteen degrees, slightly humid, almost completely dark. Light, like haste, is an enemy.",
+          "What happens in those weeks cannot be photographed. The molecules negotiate. Aldehydes that arrived too loud become considerate. Resins that seemed reluctant find their counterpart. A formula that smelled merely correct on day one will, by week eight, begin to smell inevitable. This is the difference between a perfume and an aroma.",
+          "Some of our compositions require sixteen weeks. The oud-based ones require six months. We have never released a perfume on a deadline, because there is no such thing as a deadline that a molecule is willing to honour. The cellar decides. We obey, and we wait.",
+          "When the perfumer at last unlocks the cabinet, lifts a vial to the light and breathes — and says nothing for a long moment — we know we are almost ready."
+        ],
+        "pull_quote": "Patience is not a virtue in our cellar. It is the only available material."
+      },
+      "flacon": {
+        "title_short": "La Mise en Flacon",
+        "title": "Each bottle signed, numbered, sealed.",
+        "_image_query": "perfume bottle hand-numbered atelier wax seal candlelight",
+        "image_url": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Hand-numbered amber perfume flacon sealed with gold wax.",
+        "paragraphs": [
+          "The flacons arrive from a small glassworks outside Murano, where the same family has been blowing crystal since the seventeenth century. Each one is heavier than it looks; each one carries, near the base, a tiny inclusion of gold leaf, which the maker insists is not decoration but identification.",
+          "The bottle is filled by hand, slowly, with a long-stemmed pipette. Air, in any measurable quantity, is the third enemy of perfume — after light and haste — and we treat every millilitre as if it were the last. The bottle is then weighed, capped, and pressed with a warm wax seal the colour of dark honey.",
+          "On the underside of each flacon, in fine engraved script, the perfumer writes a number. Three digits, never more. When the third digit closes a batch, the formula goes back into the cellar, the cellar locks the cabinet, and we begin again from a field, in another season, in another country.",
+          "What you uncork at home was, two years ago, a rumour kneeling in the dew. That is the only marketing we are willing to do."
+        ],
+        "pull_quote": "We do not produce perfume. We finish a conversation that began in a field two years before."
+      }
+    }
   }
 }
