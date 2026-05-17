@@ -1,3 +1,4 @@
+import type * as React from "react";
 import type { ElementType, HTMLAttributes } from "react";
 import { cn } from "@/lib/cn";
 
@@ -65,8 +66,9 @@ export function Text({
   children,
   ...props
 }: TextProps) {
+  const Component = Tag as React.ComponentType<Record<string, unknown>>;
   return (
-    <Tag
+    <Component
       className={cn(
         variantMap[variant],
         toneMap[tone],
@@ -76,6 +78,6 @@ export function Text({
       {...props}
     >
       {children}
-    </Tag>
+    </Component>
   );
 }
