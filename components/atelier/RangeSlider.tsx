@@ -33,7 +33,7 @@ export function RangeSlider({
         max={max}
         step={step}
         value={[value[0], value[1]]}
-        onValueChange={(next) => {
+        onValueChange={(next: number[]) => {
           const [a, b] = next;
           if (typeof a === "number" && typeof b === "number") {
             onChange([a, b]);
