@@ -1,10 +1,28 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
 
 type LocaleParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<LocaleParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("journal_title"),
+    description: tMeta("journal_description"),
+    path: "/journal",
+    ogSubtitle: tMeta("journal_description"),
+  });
+}
 
 export default async function JournalPage({
   params,

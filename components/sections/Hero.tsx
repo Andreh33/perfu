@@ -51,6 +51,9 @@ export async function Hero({ locale }: HeroProps) {
       data-section="hero"
       className="relative w-full h-[100svh] min-h-[640px] overflow-hidden bg-[var(--obsidian-400)]"
     >
+      {/* Decorative fallback. The h1 below already conveys the section
+          meaning to assistive tech; the image is purely atmospheric. An
+          empty alt is the correct WCAG signal for a decorative image. */}
       <HeroClient fallbackSrc={FALLBACK_SRC} fallbackAlt="">
         {/* z-1 — grain overlay (mix-blend overlay over the canvas). */}
         <div

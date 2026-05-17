@@ -200,9 +200,8 @@ export async function Footer({ locale }: FooterProps) {
               <svg
                 viewBox="0 0 1600 240"
                 width="100%"
-                height="auto"
                 preserveAspectRatio="xMidYMid meet"
-                className="block text-[var(--ink-400)]"
+                className="block h-auto text-[var(--ink-400)]"
               >
                 <text
                   x="50%"

@@ -1,7 +1,28 @@
 {
   "metadata": {
     "title": "Perfumes Dubai · Maison de Parfum",
-    "description": "The art of fragrance, distilled from desert and time."
+    "description": "The art of fragrance, distilled from desert and time.",
+    "tagline": "The art of fragrance, distilled from desert and time.",
+    "home_title": "Perfumes Dubai · The art of fragrance",
+    "home_description": "A Dubai maison of niche perfumery, twenty fragrances composed by three perfumers between Paris, Beirut and Marrakech.",
+    "atelier_title": "The Atelier · Twenty fragrances",
+    "atelier_description": "Discover the full collection. Twenty fragrances composed slowly by perfumers who refuse to hurry.",
+    "maison_title": "Maison · Letters from the atelier",
+    "maison_description": "Inside the workshop: the harvest, the alembic, the long maceration, and the ceremony of pouring an essence into glass.",
+    "perfumeur_title": "The Perfumers · Hands behind the bottle",
+    "perfumeur_description": "Three noses, three geographies, one obsession. Meet the perfumers we trust with our matter.",
+    "bespoke_title": "Bespoke · A fragrance only for you",
+    "bespoke_description": "A composition designed for you alone, six to twelve months in private with our perfumer.",
+    "boutique_title": "Boutique · City Walk, Dubai",
+    "boutique_description": "Visit our flagship boutique at City Walk, Building 4. Open daily, 10:00 to 22:00.",
+    "journal_title": "Journal · Arriving this winter",
+    "journal_description": "An editorial publication, three times a year. Interviews with perfumers and short essays on raw materials.",
+    "concierge_title": "Concierge · Direct line to the atelier",
+    "concierge_description": "For private orders, scent advice, or to schedule a visit. We respond within twenty-four hours."
+  },
+  "a11y": {
+    "skip_to_content": "Skip to content",
+    "main_landmark": "Main content"
   },
   "common": {
     "site_name": "Perfumes Dubai"

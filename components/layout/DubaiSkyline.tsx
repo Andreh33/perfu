@@ -18,10 +18,9 @@ export function DubaiSkyline({ cityWalkLabel }: DubaiSkylineProps) {
       <svg
         viewBox="0 0 800 280"
         width="100%"
-        height="auto"
         role="img"
         aria-label="Dubai skyline"
-        className="block text-[var(--ink-400)]"
+        className="block h-auto text-[var(--ink-400)]"
         preserveAspectRatio="xMidYMid meet"
       >
         {/* Horizon line */}

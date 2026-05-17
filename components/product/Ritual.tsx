@@ -23,7 +23,7 @@ export function Ritual({ product, locale, sectionLabel, caption }: RitualProps) 
     <Section spacing="cinematic" id="ritual">
       <Container width="default">
         <div className="flex flex-col items-center gap-[var(--space-7)]">
-          <Text variant="small-caps" tone="gold">
+          <Text as="h2" variant="small-caps" tone="gold">
             {sectionLabel}
           </Text>
 

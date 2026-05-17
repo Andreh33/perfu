@@ -59,11 +59,15 @@ export function CurrencySwitcher({ label, labels }: CurrencySwitcherProps) {
 
   return (
     <div ref={rootRef} className="relative inline-flex">
+      {/* aria-label is composed so the accessible name includes the
+          visible text (e.g. "Currency: EUR"). This avoids the WCAG
+          label-content-name-mismatch failure where the visible label
+          ("EUR") is not part of the accessible name ("Currency"). */}
       <button
         type="button"
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={label}
+        aria-label={`${label}: ${labels[active]}`}
         onClick={() => setOpen((v) => !v)}
         className={cn(
           "font-body text-xs font-medium uppercase tracking-[0.16em]",

@@ -1,10 +1,28 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { BespokeForm } from "@/components/bespoke/BespokeForm";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
 
 type LocaleParams = { locale: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<LocaleParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("bespoke_title"),
+    description: tMeta("bespoke_description"),
+    path: "/bespoke",
+    ogSubtitle: tMeta("bespoke_description"),
+  });
+}
 
 export default async function BespokePage({
   params,

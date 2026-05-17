@@ -162,7 +162,7 @@ export function ProductHero({ product, locale }: ProductHeroProps) {
             {t("labels.created_by")}{" "}
             <Link
               href={{ pathname: "/perfumeur", hash: perfumer.id }}
-              className="text-[var(--ink-200)] underline-offset-4 hover:text-[var(--gold-100)] hover:underline"
+              className="text-[var(--ink-200)] underline decoration-[var(--gold-300)] decoration-1 underline-offset-4 hover:text-[var(--gold-100)] hover:decoration-[var(--gold-100)]"
             >
               {perfumer.name}
             </Link>

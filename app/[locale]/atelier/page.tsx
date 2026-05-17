@@ -18,6 +18,7 @@ import {
   type SortMode,
 } from "@/lib/catalogue";
 import { cn } from "@/lib/cn";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
 
 type LocaleParams = { locale: string };
 
@@ -27,11 +28,14 @@ export async function generateMetadata({
   params: Promise<LocaleParams>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "atelier" });
-  return {
-    title: `${t("title")} · Perfumes Dubai`,
-    description: t("subtitle"),
-  };
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("atelier_title"),
+    description: tMeta("atelier_description"),
+    path: "/atelier",
+    ogSubtitle: tMeta("atelier_description"),
+  });
 }
 
 export default async function AtelierPage({
@@ -156,6 +160,11 @@ export default async function AtelierPage({
                   }}
                 />
               </div>
+
+              {/* Visually hidden h2 — sits between the page h1 and the
+                  product card h3s so the heading hierarchy reads h1 → h2 → h3
+                  for screen-reader and Lighthouse a11y compliance. */}
+              <h2 className="sr-only">{t("title")}</h2>
 
               {products.length === 0 ? (
                 <EmptyState

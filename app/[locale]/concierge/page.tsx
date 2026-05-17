@@ -1,11 +1,29 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { ConciergeForm } from "@/components/concierge/ConciergeForm";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
 
 type LocaleParams = { locale: string };
 type ConciergeSearchParams = { from?: string | string[] };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<LocaleParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("concierge_title"),
+    description: tMeta("concierge_description"),
+    path: "/concierge",
+    ogSubtitle: tMeta("concierge_description"),
+  });
+}
 
 export default async function ConciergePage({
   params,
