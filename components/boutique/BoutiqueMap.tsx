@@ -11,15 +11,7 @@ interface BoutiqueMapProps {
 export function BoutiqueMap({ cityWalkLabel, caption }: BoutiqueMapProps) {
   return (
     <figure className="relative w-full">
-      <style>{`
-        @keyframes pdb-pulse {
-          0%, 100% { transform: scale(1); opacity: 0.9; }
-          50% { transform: scale(1.7); opacity: 0.18; }
-        }
-        @keyframes pdb-draw {
-          to { stroke-dashoffset: 0; }
-        }
-      `}</style>
+      {/* @keyframes pdb-pulse + pdb-draw live in app/globals.css (HostHoistable fix) */}
       <svg
         viewBox="0 0 800 400"
         width="100%"

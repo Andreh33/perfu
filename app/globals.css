@@ -267,6 +267,171 @@ body::after {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   CONSOLIDATED COMPONENT STYLES
+   Everything below was originally rendered as inline <style> blocks
+   inside individual Client Components (CustomCursor, Navbar.client,
+   AudioToggle, DubaiSkyline, BoutiqueMap, Hero). React 19 hoisted
+   each of those <style> tags into <head> as a HostHoistable resource,
+   and when any of those components re-rendered (state change) the
+   reconciler lost track of the hoisted node and crashed with
+   NotFoundError on removeChild during commit. Moving everything here
+   means there is exactly ONE stylesheet link in <head> and the
+   reconciler never has to manage style nodes.
+   ─────────────────────────────────────────────────────────────── */
+
+/* CustomCursor */
+.pd-cursor-dot,
+.pd-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform, width, height, opacity;
+  mix-blend-mode: normal;
+}
+.pd-cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--gold-200);
+  opacity: 0.7;
+  transition:
+    width 220ms var(--ease-soft-expo),
+    height 220ms var(--ease-soft-expo),
+    opacity 220ms var(--ease-soft-expo),
+    border-radius 220ms var(--ease-soft-expo),
+    background-color 220ms var(--ease-soft-expo);
+}
+.pd-cursor-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid var(--gold-200);
+  opacity: 0;
+  transition:
+    width 360ms var(--ease-soft-expo),
+    height 360ms var(--ease-soft-expo),
+    opacity 360ms var(--ease-soft-expo);
+}
+.pd-cursor-ring[data-variant="interactive"] {
+  width: 48px;
+  height: 48px;
+  opacity: 0.6;
+  background: rgba(184, 147, 90, 0.12);
+}
+.pd-cursor-dot[data-variant="text"] {
+  width: 2px;
+  height: 24px;
+  border-radius: 1px;
+}
+.pd-cursor-dot[data-variant="webgl"] {
+  background: var(--gold-100);
+  opacity: 0.9;
+}
+.pd-cursor-dot[data-pressed="true"] {
+  width: 6px;
+  height: 6px;
+  transition:
+    width 200ms var(--ease-firm-back),
+    height 200ms var(--ease-firm-back);
+}
+.pd-cursor-dot[data-hidden="true"],
+.pd-cursor-ring[data-hidden="true"] {
+  opacity: 0 !important;
+}
+@media (pointer: coarse) {
+  .pd-cursor-dot,
+  .pd-cursor-ring {
+    display: none;
+  }
+}
+
+/* Navbar.client — clip-path entrance */
+@keyframes pd-nav-enter {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* AudioToggle — equalizer bar oscillation */
+@keyframes pd-eq {
+  0% {
+    height: 4px;
+    y: 9px;
+  }
+  100% {
+    height: 18px;
+    y: 2px;
+  }
+}
+
+/* DubaiSkyline & BoutiqueMap — pulsing gold marker dot */
+@keyframes pd-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.25;
+  }
+}
+@keyframes pdb-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.7);
+    opacity: 0.18;
+  }
+}
+@keyframes pdb-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Hero CTA arrow — bounces horizontally in loop. LTR variant moves right,
+   RTL moves left. Selectors fire based on <html dir>. */
+@keyframes hero-arrow-bounce-ltr {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+@keyframes hero-arrow-bounce-rtl {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+.hero-arrow {
+  display: inline-block;
+  animation: hero-arrow-bounce-ltr 1400ms var(--ease-tide) infinite;
+}
+[dir="rtl"] .hero-arrow {
+  animation-name: hero-arrow-bounce-rtl;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-arrow {
+    animation: none;
+  }
+}
+
 .clip-reveal {
   clip-path: inset(100% 0 0 0);
   animation: clip-reveal var(--duration-slow) var(--ease-soft-expo) forwards;

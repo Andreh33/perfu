@@ -9,12 +9,7 @@ interface DubaiSkylineProps {
 export function DubaiSkyline({ cityWalkLabel }: DubaiSkylineProps) {
   return (
     <div className="relative w-full">
-      <style>{`
-        @keyframes pd-pulse {
-          0%, 100% { transform: scale(1); opacity: 0.85; }
-          50% { transform: scale(1.6); opacity: 0.25; }
-        }
-      `}</style>
+      {/* @keyframes pd-pulse lives in app/globals.css (HostHoistable fix) */}
       <svg
         viewBox="0 0 800 280"
         width="100%"

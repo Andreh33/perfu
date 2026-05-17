@@ -137,12 +137,7 @@ function EqualizerIcon({ playing }: EqualizerIconProps) {
       aria-hidden
       style={{ display: "block" }}
     >
-      <style>{`
-        @keyframes pd-eq {
-          0%   { height: 4px; y: 9px; }
-          100% { height: 18px; y: 2px; }
-        }
-      `}</style>
+      {/* @keyframes pd-eq lives in app/globals.css (HostHoistable fix) */}
       {idle.map((h, i) => {
         const x = 2 + i * 4;
         const dur = durations[i] ?? "0.7s";

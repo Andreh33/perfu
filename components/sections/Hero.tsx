@@ -144,14 +144,7 @@ export async function Hero({ locale }: HeroProps) {
                     className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-[var(--duration-medium)] ease-[var(--ease-soft-expo)] group-hover:scale-x-100"
                   />
                 </span>
-                <span
-                  aria-hidden
-                  className="inline-block"
-                  style={{
-                    animation:
-                      "hero-arrow-bounce 1400ms var(--ease-tide) infinite",
-                  }}
-                >
+                <span aria-hidden className="hero-arrow">
                   {isRtl ? "←" : "→"}
                 </span>
               </Link>
@@ -162,17 +155,7 @@ export async function Hero({ locale }: HeroProps) {
 
       {/* Keyframes are declared inline so the Hero section is self-contained
           and does not require a globals.css edit just for one animation. */}
-      <style>{`
-        @keyframes hero-arrow-bounce {
-          0%, 100% { transform: translateX(0); }
-          50%      { transform: translateX(${isRtl ? "-" : ""}4px); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          @keyframes hero-arrow-bounce {
-            0%, 100% { transform: translateX(0); }
-          }
-        }
-      `}</style>
+      {/* hero-arrow-bounce keyframes (LTR + RTL) live in app/globals.css */}
     </section>
   );
 }

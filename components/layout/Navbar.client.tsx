@@ -46,12 +46,7 @@ export function NavbarClient({
             : "border-b border-transparent bg-transparent",
         )}
       >
-        <style>{`
-          @keyframes pd-nav-enter {
-            from { clip-path: inset(100% 0 0 0); }
-            to { clip-path: inset(0 0 0 0); }
-          }
-        `}</style>
+        {/* @keyframes pd-nav-enter lives in app/globals.css (HostHoistable fix) */}
         {children}
 
         {/* Hamburger — visible only below lg */}

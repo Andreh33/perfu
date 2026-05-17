@@ -97,74 +97,12 @@ export function CustomCursor() {
     };
   }, []);
 
+  // Cursor styles live in app/globals.css under "CONSOLIDATED COMPONENT
+  // STYLES" — see that file. We do NOT render an inline <style> tag here
+  // because React 19 hoists it to <head> as a HostHoistable and the
+  // reconciler crashes on commit when state changes (removeChild bug).
   return (
     <>
-      {/* Inline style so the custom cursor never relies on a stale CSS build. */}
-      <style>{`
-        .pd-cursor-dot,
-        .pd-cursor-ring {
-          position: fixed;
-          top: 0;
-          left: 0;
-          pointer-events: none;
-          z-index: 9998;
-          will-change: transform, width, height, opacity;
-          mix-blend-mode: normal;
-        }
-        .pd-cursor-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 999px;
-          background: var(--gold-200);
-          opacity: 0.7;
-          transition:
-            width 220ms var(--ease-soft-expo),
-            height 220ms var(--ease-soft-expo),
-            opacity 220ms var(--ease-soft-expo),
-            border-radius 220ms var(--ease-soft-expo),
-            background-color 220ms var(--ease-soft-expo);
-        }
-        .pd-cursor-ring {
-          width: 8px;
-          height: 8px;
-          border-radius: 999px;
-          border: 1px solid var(--gold-200);
-          opacity: 0;
-          transition:
-            width 360ms var(--ease-soft-expo),
-            height 360ms var(--ease-soft-expo),
-            opacity 360ms var(--ease-soft-expo);
-        }
-        .pd-cursor-ring[data-variant="interactive"] {
-          width: 48px;
-          height: 48px;
-          opacity: 0.6;
-          background: rgba(184, 147, 90, 0.12);
-        }
-        .pd-cursor-dot[data-variant="text"] {
-          width: 2px;
-          height: 24px;
-          border-radius: 1px;
-        }
-        .pd-cursor-dot[data-variant="webgl"] {
-          background: var(--gold-100);
-          opacity: 0.9;
-        }
-        .pd-cursor-dot[data-pressed="true"] {
-          width: 6px;
-          height: 6px;
-          transition:
-            width 200ms var(--ease-firm-back),
-            height 200ms var(--ease-firm-back);
-        }
-        .pd-cursor-dot[data-hidden="true"],
-        .pd-cursor-ring[data-hidden="true"] {
-          opacity: 0 !important;
-        }
-        @media (pointer: coarse) {
-          .pd-cursor-dot, .pd-cursor-ring { display: none; }
-        }
-      `}</style>
       <div
         ref={dotRef}
         className="pd-cursor-dot"
