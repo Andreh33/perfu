@@ -357,6 +357,10 @@ body::after {
   animation-timing-function: var(--ease-soft-expo);
 }
 
+/* Named "route-curtain" group retained as opt-in: any element that sets
+   `view-transition-name: route-curtain` on a client-side navigation will use
+   this clip-path keyframe pair. We do NOT apply it from the SSR wrapper to
+   avoid hydration-snapshot conflicts with React 19. */
 ::view-transition-old(route-curtain) {
   animation: route-curtain-out 600ms var(--ease-soft-expo) both;
 }

@@ -1,12 +1,11 @@
 "use client";
-// Route curtain — visual wrapper that gives the route content a stable
-// view-transition name, so the navigation-level @view-transition rules in
-// globals.css can run a "curtain" clip-path animation.
-//
-// Server components cannot set `viewTransitionName` via the `style` prop
-// (React 19 forwards styles, but the named transition only matters once the
-// browser computes layout, which is fine here). We keep this thin client
-// wrapper so the layout root stays a server component.
+// Route curtain — passthrough wrapper. The named view-transition-name was
+// removed because it interfered with React 19's hydration commit on first
+// paint, producing `removeChild` errors when the browser captured a snapshot
+// of an SSR-rendered subtree that React was still reconciling. The root-level
+// `@view-transition { navigation: auto }` rule in globals.css continues to
+// animate the entire root group on client-side navigations using `ease-soft-expo`,
+// which is enough for the editorial feel without requiring a named transition.
 
 import type { ReactNode } from "react";
 
@@ -15,9 +14,5 @@ interface RouteCurtainProps {
 }
 
 export function RouteCurtain({ children }: RouteCurtainProps) {
-  return (
-    <div style={{ viewTransitionName: "route-curtain" }}>
-      {children}
-    </div>
-  );
+  return <>{children}</>;
 }
