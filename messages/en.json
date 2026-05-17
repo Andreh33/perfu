@@ -517,5 +517,61 @@
     "body": "We hand-wrap and number every flacon before it leaves. Expect delivery within seven working days. A confirmation has reached your inbox.",
     "cta_continue": "RETURN TO THE ATELIER →",
     "cta_concierge": "MESSAGE THE CONCIERGE →"
+  },
+  "product": {
+    "tabs": {
+      "ml50": "50 ml",
+      "ml100": "100 ml"
+    },
+    "cta": {
+      "acquire": "ACQUIRE",
+      "sample": "REQUEST SAMPLE",
+      "wishlist": "Add to wishlist"
+    },
+    "labels": {
+      "created_by": "Created by",
+      "permanent": "Permanent collection",
+      "limited_edition": "Limited edition",
+      "edition_number": "Edition Nº{n}",
+      "from": "FROM",
+      "sticky_acquire": "ACQUIRE — €{price} · {size}",
+      "year_label": "MMXXII",
+      "size_label": "SIZE",
+      "intensity_label": "INTENSITY",
+      "perfumer_label": "PERFUMER",
+      "origin_label": "INSPIRED BY"
+    },
+    "sections": {
+      "narrative": "THE STORY",
+      "pyramid": "OLFACTORY PYRAMID",
+      "pyramid_intro": "Three movements. Read from the top, settle at the base.",
+      "pyramid_top": "TOP NOTES",
+      "pyramid_heart": "HEART NOTES",
+      "pyramid_base": "BASE NOTES",
+      "ritual": "RITUAL OF APPLICATION",
+      "ritual_caption": "Where the fragrance breathes — pulse, neck, the inner crease.",
+      "related": "ALSO WORN BY THOSE WHO WORE THIS",
+      "reviews": "WHAT THEY SAY",
+      "back_to_atelier": "BACK TO ATELIER →",
+      "gallery_caption": "EDITORIAL · {n}"
+    },
+    "reviews": {
+      "city_label": "FROM",
+      "date_format": "{month} {year}"
+    },
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    }
   }
 }

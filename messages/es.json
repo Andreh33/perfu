@@ -517,5 +517,61 @@
     "body": "Cada frasco se envuelve y numera a mano antes de partir. Llega en un máximo de siete días laborables. Recibirás la confirmación por correo.",
     "cta_continue": "VOLVER AL ATELIER →",
     "cta_concierge": "ESCRIBIR AL CONCIERGE →"
+  },
+  "product": {
+    "tabs": {
+      "ml50": "50 ml",
+      "ml100": "100 ml"
+    },
+    "cta": {
+      "acquire": "ADQUIRIR",
+      "sample": "PEDIR MUESTRA",
+      "wishlist": "Añadir a deseos"
+    },
+    "labels": {
+      "created_by": "Compuesto por",
+      "permanent": "Colección permanente",
+      "limited_edition": "Edición limitada",
+      "edition_number": "Edición Nº{n}",
+      "from": "DESDE",
+      "sticky_acquire": "ADQUIRIR — €{price} · {size}",
+      "year_label": "MMXXII",
+      "size_label": "TAMAÑO",
+      "intensity_label": "INTENSIDAD",
+      "perfumer_label": "PERFUMISTA",
+      "origin_label": "INSPIRADO EN"
+    },
+    "sections": {
+      "narrative": "LA HISTORIA",
+      "pyramid": "PIRÁMIDE OLFATIVA",
+      "pyramid_intro": "Tres movimientos. Se lee desde lo alto, asienta en la base.",
+      "pyramid_top": "NOTAS DE SALIDA",
+      "pyramid_heart": "NOTAS DE CORAZÓN",
+      "pyramid_base": "NOTAS DE FONDO",
+      "ritual": "RITUAL DE APLICACIÓN",
+      "ritual_caption": "Donde respira el perfume — pulso, cuello, el pliegue interior.",
+      "related": "TAMBIÉN LLEVADO POR QUIENES LLEVARON ESTE",
+      "reviews": "LO QUE DICEN",
+      "back_to_atelier": "VOLVER AL ATELIER →",
+      "gallery_caption": "EDITORIAL · {n}"
+    },
+    "reviews": {
+      "city_label": "DESDE",
+      "date_format": "{month} de {year}"
+    },
+    "months": {
+      "1": "enero",
+      "2": "febrero",
+      "3": "marzo",
+      "4": "abril",
+      "5": "mayo",
+      "6": "junio",
+      "7": "julio",
+      "8": "agosto",
+      "9": "septiembre",
+      "10": "octubre",
+      "11": "noviembre",
+      "12": "diciembre"
+    }
   }
 }
