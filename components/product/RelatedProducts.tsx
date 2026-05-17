@@ -34,7 +34,10 @@ export function RelatedProducts({
   return (
     <Section spacing="spacious" tone="elevated">
       <Container width="wide">
+        {/* Promoted to h2 so the page heading hierarchy is h1 → h2 → h3
+            (h3 lives inside each ProductCard). Visually unchanged. */}
         <Text
+          as="h2"
           variant="small-caps"
           tone="gold"
           className="mb-[var(--space-7)] block text-center"

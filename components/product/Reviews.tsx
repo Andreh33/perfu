@@ -34,6 +34,7 @@ export function Reviews({
     <Section spacing="spacious" id="reviews">
       <Container width="wide">
         <Text
+          as="h2"
           variant="small-caps"
           tone="gold"
           className="mb-[var(--space-7)] block text-center"

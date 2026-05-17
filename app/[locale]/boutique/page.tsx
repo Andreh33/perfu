@@ -1,13 +1,31 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { Link as I18nLink } from "@/i18n/navigation";
 import { BoutiqueMap } from "@/components/boutique/BoutiqueMap";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
 
 type LocaleParams = { locale: string };
 
 const WHAT_KEYS = ["consultation", "discovery", "journey", "samples"] as const;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<LocaleParams>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("boutique_title"),
+    description: tMeta("boutique_description"),
+    path: "/boutique",
+    ogSubtitle: tMeta("boutique_description"),
+  });
+}
 
 export default async function BoutiquePage({
   params,

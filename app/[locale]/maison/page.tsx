@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { Chapter, type ChapterRoman, type ChapterSlug } from "@/components/maison/Chapter";
 import { ChapterDivider } from "@/components/maison/ChapterDivider";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
 
 type LocaleParams = { locale: string };
 
@@ -21,11 +22,15 @@ export async function generateMetadata({
   params: Promise<LocaleParams>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "maison" });
-  return {
-    title: `${t("title")} · Perfumes Dubai`,
-    description: t("intro_paragraph_1"),
-  };
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  const tMaison = await getTranslations({ locale, namespace: "maison" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("maison_title"),
+    description: tMeta("maison_description"),
+    path: "/maison",
+    ogSubtitle: tMaison("title"),
+  });
 }
 
 export default async function MaisonPage({

@@ -56,7 +56,7 @@ export function Narrative({
     <Section spacing="spacious" id="story">
       <Container width="wide">
         <ChapterReveal>
-          <Text variant="small-caps" tone="gold" className="block mb-[var(--space-6)]">
+          <Text as="h2" variant="small-caps" tone="gold" className="block mb-[var(--space-6)]">
             {sectionLabel}
           </Text>
         </ChapterReveal>

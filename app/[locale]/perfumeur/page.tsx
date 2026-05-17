@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -6,6 +7,23 @@ import {
   PerfumerBlock,
   type PerfumerBlockData,
 } from "@/components/perfumeur/PerfumerBlock";
+import { buildRouteMetadata } from "@/lib/seo/page-metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const tMeta = await getTranslations({ locale, namespace: "metadata" });
+  return buildRouteMetadata({
+    locale,
+    title: tMeta("perfumeur_title"),
+    description: tMeta("perfumeur_description"),
+    path: "/perfumeur",
+    ogSubtitle: tMeta("perfumeur_description"),
+  });
+}
 
 // Fallback dataset, used until B4 (`lib/perfumers.ts`) lands in main. The
 // images are sourced from Unsplash via documented queries:

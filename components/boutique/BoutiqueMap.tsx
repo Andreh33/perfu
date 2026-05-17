@@ -23,10 +23,9 @@ export function BoutiqueMap({ cityWalkLabel, caption }: BoutiqueMapProps) {
       <svg
         viewBox="0 0 800 400"
         width="100%"
-        height="auto"
         role="img"
         aria-label="Stylised drawing of Dubai with City Walk marker"
-        className="block text-[var(--ink-400)]"
+        className="block h-auto text-[var(--ink-400)]"
         preserveAspectRatio="xMidYMid meet"
       >
         {/* compass */}

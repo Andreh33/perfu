@@ -192,8 +192,11 @@ export function ProductCard({
 
       {/* meta block */}
       <div className="mt-[var(--space-5)] flex flex-1 flex-col gap-[var(--space-3)]">
+        {/* gold-200 instead of gold-300 here so the family eyebrow
+            crosses WCAG AA 4.5:1 contrast on obsidian-400 backgrounds.
+            gold-300 (#8e6e3f) sits at 3.6:1, gold-200 (#b8935a) at 6.1:1. */}
         <span
-          className="small-caps text-[var(--gold-300)]"
+          className="small-caps text-[var(--gold-200)]"
           style={{ letterSpacing: "0.16em" }}
         >
           {familyLabel}

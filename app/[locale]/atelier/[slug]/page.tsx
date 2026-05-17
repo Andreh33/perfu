@@ -203,7 +203,7 @@ export default async function ProductPage({
       <Section spacing="spacious" tone="elevated" id="pyramid">
         <Container width="wide">
           <div className="mb-[var(--space-7)] flex flex-col gap-[var(--space-3)]">
-            <Text variant="small-caps" tone="gold">
+            <Text as="h2" variant="small-caps" tone="gold">
               {t("sections.pyramid")}
             </Text>
             <Text variant="subhead" italic tone="muted" className="max-w-[48ch]">

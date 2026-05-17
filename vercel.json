@@ -7,7 +7,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/styleguide(/.*)?",
+      "source": "/(en|ar)?/?styleguide(/.*)?",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]

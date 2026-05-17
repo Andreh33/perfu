@@ -1,7 +1,28 @@
 {
   "metadata": {
     "title": "Perfumes Dubai · Maison de Parfum",
-    "description": "El arte de la fragancia, destilado del desierto y el tiempo."
+    "description": "El arte de la fragancia, destilado del desierto y el tiempo.",
+    "tagline": "El arte de la fragancia, destilado del desierto y el tiempo.",
+    "home_title": "Perfumes Dubai · El arte de la fragancia",
+    "home_description": "Maison de perfumería de nicho en Dubái. Veinte fragancias compuestas por tres perfumistas entre París, Beirut y Marrakech.",
+    "atelier_title": "El Atelier · Veinte fragancias",
+    "atelier_description": "Descubre la colección completa. Veinte fragancias compuestas con pausa por perfumistas que se niegan a apresurarse.",
+    "maison_title": "Maison · Cartas desde el atelier",
+    "maison_description": "Dentro del taller: la cosecha, el alambique, la larga maceración y la ceremonia de verter una esencia en cristal.",
+    "perfumeur_title": "Los Perfumistas · Las manos tras el frasco",
+    "perfumeur_description": "Tres narices, tres geografías, una obsesión. Conoce a los perfumistas a quienes confiamos nuestra materia.",
+    "bespoke_title": "Bespoke · Una fragancia solo para ti",
+    "bespoke_description": "Una composición diseñada únicamente para ti, de seis a doce meses en privado con nuestro perfumista.",
+    "boutique_title": "Boutique · City Walk, Dubái",
+    "boutique_description": "Visita nuestra boutique principal en City Walk, Edificio 4. Abierto cada día, de 10:00 a 22:00.",
+    "journal_title": "Journal · Llega este invierno",
+    "journal_description": "Una publicación editorial, tres veces al año. Entrevistas con perfumistas y ensayos breves sobre materias primas.",
+    "concierge_title": "Concierge · Línea directa al atelier",
+    "concierge_description": "Para pedidos privados, asesoría olfativa o concertar una visita. Respondemos en veinticuatro horas."
+  },
+  "a11y": {
+    "skip_to_content": "Saltar al contenido",
+    "main_landmark": "Contenido principal"
   },
   "common": {
     "site_name": "Perfumes Dubai"
