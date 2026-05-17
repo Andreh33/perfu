@@ -16,19 +16,27 @@ interface HeroProps {
 
 // Wrap each word in a masked span so the client entrance can stagger them.
 // Mirrors the technique used by Manifesto.client (split-by-word reveal).
+// Each word lives inside an overflow-hidden mask wrapper so the entrance can
+// translate the inner span up from below. The trailing space is included
+// INSIDE the inner span (followed by a non-breaking space for the visual gap)
+// because plain whitespace nodes between adjacent inline-block siblings
+// collapse in some layouts.
 function splitWords(text: string): ReactNode[] {
   const words = text.split(/\s+/).filter(Boolean);
-  return words.map((word, i) => (
-    <span
-      key={`${word}-${i}`}
-      className="word inline-block overflow-hidden align-baseline"
-    >
-      <span className="word-inner inline-block will-change-transform">
-        {word}
+  return words.map((word, i) => {
+    const trailing = i < words.length - 1 ? " " : "";
+    return (
+      <span
+        key={`${word}-${i}`}
+        className="word inline-block overflow-hidden align-baseline"
+      >
+        <span className="word-inner inline-block will-change-transform">
+          {word}
+          {trailing}
+        </span>
       </span>
-      {i < words.length - 1 ? " " : null}
-    </span>
-  ));
+    );
+  });
 }
 
 // Hero fallback. The image is a tiny placeholder shipped under /public; an
@@ -105,19 +113,20 @@ export async function Hero({ locale }: HeroProps) {
             paddingBlock: "var(--space-7)",
           }}
         >
-          <div className="flex flex-col gap-[var(--space-6)] max-w-[24ch]">
+          <div className="flex flex-col gap-[var(--space-5)] max-w-[640px]">
             <Text
               as="span"
               variant="small-caps"
               tone="gold"
               data-hero-eyebrow
-              style={{ willChange: "clip-path" }}
+              className="text-[var(--text-xs)] whitespace-nowrap"
+              style={{ willChange: "clip-path", letterSpacing: "0.18em" }}
             >
               {t("eyebrow")}
             </Text>
 
             <h1
-              className="font-display text-[clamp(3.5rem,12vw,11.642rem)] leading-[0.88] tracking-[-0.04em] text-[var(--ink-100)]"
+              className="font-display text-[clamp(2.25rem,5.5vw,5.5rem)] leading-[0.95] tracking-[-0.03em] text-[var(--ink-100)]"
               style={{ textWrap: "balance" }}
             >
               <span
@@ -141,19 +150,18 @@ export async function Hero({ locale }: HeroProps) {
 
             <Text
               as="p"
-              variant="display-m"
               tone="muted"
               italic
               data-hero-subtitle
-              className="max-w-[28ch] font-display"
+              className="max-w-[40ch] font-display text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.4]"
             >
               {t("subtitle")}
             </Text>
 
-            <div data-hero-cta className="mt-[var(--space-4)]">
+            <div data-hero-cta className="mt-[var(--space-3)]">
               <Link
                 href={`/${locale}/atelier`}
-                className="group relative inline-flex items-center gap-[var(--space-3)] font-body uppercase tracking-[0.18em] text-[var(--text-sm)] text-[var(--gold-200)] hover:text-[var(--gold-100)] transition-colors duration-[var(--duration-quick)]"
+                className="group relative inline-flex items-center gap-[var(--space-3)] font-body uppercase tracking-[0.22em] text-[var(--text-sm)] text-[var(--gold-200)] hover:text-[var(--gold-100)] transition-colors duration-[var(--duration-quick)]"
               >
                 <span className="relative">
                   {t("cta").replace(/[→←]\s*$/, "").trim()}

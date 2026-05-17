@@ -89,13 +89,16 @@ export default async function AtelierPage({
           </nav>
 
           <div className="flex flex-col gap-[var(--space-5)] md:flex-row md:items-end md:justify-between">
-            <div className="flex flex-col gap-[var(--space-4)] md:max-w-[640px]">
-              <Text as="h1" variant="display-l">
+            <div className="flex flex-col gap-[var(--space-5)] md:max-w-[640px]">
+              <h1
+                className="font-display text-[clamp(2.5rem,7vw,6rem)] leading-[0.95] tracking-[-0.03em] text-[var(--ink-100)]"
+                style={{ textWrap: "balance" }}
+              >
                 {t("title")}
-              </Text>
-              <Text variant="quote" tone="muted" italic className="max-w-[60ch]">
+              </h1>
+              <p className="font-display italic text-[clamp(1.1rem,1.6vw,1.4rem)] leading-[1.4] text-[var(--ink-300)] max-w-[52ch]">
                 {t("subtitle")}
-              </Text>
+              </p>
             </div>
             <Text
               variant="metadata"
