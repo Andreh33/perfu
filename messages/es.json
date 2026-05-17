@@ -126,5 +126,66 @@
       "timeout": "TARDANDO MÁS · QUEDÉSE"
     },
     "arabic_badge": "صبراً جميلاً"
+  },
+  "atelier": {
+    "breadcrumb": {
+      "home": "INICIO",
+      "atelier": "ATELIER"
+    },
+    "title": "EL ATELIER",
+    "subtitle": "Veinte fragancias compuestas con lentitud, por perfumistas que se niegan a apresurarse.",
+    "counter": "{n} fragancias",
+    "counter_filtered": "{n} de {total}",
+    "filters": {
+      "title": "FILTROS",
+      "family": "FAMILIA OLFATIVA",
+      "gender": "GÉNERO",
+      "intensity": "INTENSIDAD",
+      "price": "PRECIO",
+      "size": "TAMAÑO",
+      "year": "AÑO",
+      "clear_all": "LIMPIAR",
+      "open": "FILTROS",
+      "close": "CERRAR",
+      "apply": "VER RESULTADOS"
+    },
+    "views": {
+      "label": "VISTA",
+      "grid": "GRID",
+      "list": "LISTA"
+    },
+    "sort": {
+      "label": "ORDEN",
+      "featured": "Destacados",
+      "price_asc": "Precio · ascendente",
+      "price_desc": "Precio · descendente",
+      "year_desc": "Más recientes"
+    },
+    "card": {
+      "from": "DESDE",
+      "acquire": "ADQUIRIR",
+      "notes": "NOTAS DE SALIDA",
+      "limited": "LIMITADO",
+      "new": "NUEVO",
+      "bestseller": "SIGNATURE"
+    },
+    "genders": {
+      "masculine": "Masculino",
+      "feminine": "Femenino",
+      "unisex": "Unisex"
+    },
+    "intensities": {
+      "eau_de_parfum": "Eau de Parfum",
+      "extrait": "Extrait de Parfum",
+      "parfum": "Parfum"
+    },
+    "sizes": {
+      "ml50": "50 ml",
+      "ml100": "100 ml"
+    },
+    "empty": {
+      "title": "Nada coincide aún.",
+      "subtitle": "Afloja un filtro, o límpialos todos."
+    }
   }
 }

@@ -126,5 +126,66 @@
       "timeout": "يستغرق وقتاً · انتظرنا"
     },
     "arabic_badge": "صبراً جميلاً"
+  },
+  "atelier": {
+    "breadcrumb": {
+      "home": "الرئيسية",
+      "atelier": "الورشة"
+    },
+    "title": "الورشة",
+    "subtitle": "عشرون عطراً يصاغ على مهلٍ، بأيدي عطّارين يأبَون العَجَلة.",
+    "counter": "{n} عطراً",
+    "counter_filtered": "{n} من {total}",
+    "filters": {
+      "title": "تصفية",
+      "family": "العائلة العطرية",
+      "gender": "الفئة",
+      "intensity": "التركيز",
+      "price": "السعر",
+      "size": "الحجم",
+      "year": "السنة",
+      "clear_all": "مسح",
+      "open": "تصفية",
+      "close": "إغلاق",
+      "apply": "عرض النتائج"
+    },
+    "views": {
+      "label": "العرض",
+      "grid": "شبكة",
+      "list": "قائمة"
+    },
+    "sort": {
+      "label": "ترتيب",
+      "featured": "المختارة",
+      "price_asc": "السعر · الأقل إلى الأعلى",
+      "price_desc": "السعر · الأعلى إلى الأقل",
+      "year_desc": "الأحدث"
+    },
+    "card": {
+      "from": "من",
+      "acquire": "اقتنِ",
+      "notes": "النوتات العليا",
+      "limited": "إصدار محدود",
+      "new": "جديد",
+      "bestseller": "العطر الرمز"
+    },
+    "genders": {
+      "masculine": "للرجال",
+      "feminine": "للنساء",
+      "unisex": "للجميع"
+    },
+    "intensities": {
+      "eau_de_parfum": "أو دو بارفان",
+      "extrait": "إكستريه دو بارفان",
+      "parfum": "بارفان"
+    },
+    "sizes": {
+      "ml50": "٥٠ مل",
+      "ml100": "١٠٠ مل"
+    },
+    "empty": {
+      "title": "لا شيء يطابق بعد.",
+      "subtitle": "خفّف أحد عوامل التصفية، أو امسحها كلّها."
+    }
   }
 }
