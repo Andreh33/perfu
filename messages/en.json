@@ -30,6 +30,16 @@
       "styleguide": "View design system →"
     }
   },
+  "manifesto": {
+    "phrases": {
+      "p1": "We don't sell perfume.",
+      "p2_a": "We bottle",
+      "p2_b": "memory.",
+      "p3": "Three thousand years of attar, distilled.",
+      "p4": "Worn by those who never explain themselves."
+    },
+    "frame_caption": ""
+  },
   "footer": {
     "newsletter": {
       "title": "For the rare and the rumored.",
