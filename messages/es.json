@@ -311,7 +311,11 @@
         "roman": "II",
         "bio_1": "Nacida en Beirut, formada en Grasse, Yasmin regresó al Levante tras quince años en el sur de Francia. Trabaja en un pequeño atelier sobre el puerto viejo, siempre con las ventanas abiertas.",
         "bio_2": "Compone desde la memoria antes que desde la fórmula. La despensa de una abuela, el cedro de un postigo de montaña, un domingo lento en Hamra. Sus perfumes tienen la estructura de un poema libanés: densos, alusivos, generosos en la garganta.",
-        "bio_3": "Cuarenta coleccionistas han llevado su obra en silencio durante más de una década. Nos honra traer tres de sus composiciones, por primera vez, fuera de aquellas paredes."
+        "bio_3": "Cuarenta coleccionistas han llevado su obra en silencio durante más de una década. Nos honra traer tres de sus composiciones, por primera vez, fuera de aquellas paredes.",
+        "works": {
+          "first": "Beirut, sept.",
+          "second": "Cèdre du Chouf"
+        }
       },
       "belaid": {
         "name": "Maurice Belaïd",
@@ -319,7 +323,11 @@
         "roman": "III",
         "bio_1": "Maurice es el más joven de los tres y el más arquitectónico de los tres. Mitad marroquí, mitad francés, criado entre Marrakech y Lyon, trata cada composición como un edificio: cimientos, notas portantes, ornamento.",
         "bio_2": "Es fluido en oud — la resina, la madera, el humo — y igualmente fluido en su contención. Una vez nos dijo que la dificultad del oud no está en añadirlo, sino en saber cuándo parar.",
-        "bio_3": "Lo encargamos componer nuestro buque insignia en 2024. La pieza se llama Tariqa. Es, para nosotros, la frase más verdadera que la maison ha escrito hasta ahora."
+        "bio_3": "Lo encargamos componer nuestro buque insignia en 2024. La pieza se llama Tariqa. Es, para nosotros, la frase más verdadera que la maison ha escrito hasta ahora.",
+        "works": {
+          "first": "Tariqa",
+          "second": "Humo del Atlas"
+        }
       }
     }
   },

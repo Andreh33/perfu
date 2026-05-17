@@ -311,7 +311,11 @@
         "roman": "II",
         "bio_1": "Born in Beirut, trained in Grasse, Yasmin returned to the Levant after fifteen years in the south of France. She works from a small atelier above the old port, with the windows always open.",
         "bio_2": "She composes from memory before formula. A grandmother's pantry, the cedar of a mountain shutter, a slow Sunday in Hamra. Her perfumes carry the structure of a Lebanese poem: dense, allusive, generous in the throat.",
-        "bio_3": "Her work has been worn quietly by the same forty collectors for over a decade. We are honoured to bring three of her compositions, for the first time, beyond their walls."
+        "bio_3": "Her work has been worn quietly by the same forty collectors for over a decade. We are honoured to bring three of her compositions, for the first time, beyond their walls.",
+        "works": {
+          "first": "Beirut, Sept.",
+          "second": "Cèdre du Chouf"
+        }
       },
       "belaid": {
         "name": "Maurice Belaïd",
@@ -319,7 +323,11 @@
         "roman": "III",
         "bio_1": "Maurice is the youngest of the three, the most architectural in his thinking. Half Moroccan, half French, raised between Marrakech and Lyon, he treats each composition as a building: foundations, load-bearing notes, ornament.",
         "bio_2": "He is fluent in oud — the resin, the wood, the smoke — and equally fluent in its restraint. He once told us that the difficulty of oud is not in adding it, but in knowing when to stop.",
-        "bio_3": "We commissioned him to compose our flagship in 2024. The piece is called Tariqa. It is, to us, the truest sentence the maison has yet written."
+        "bio_3": "We commissioned him to compose our flagship in 2024. The piece is called Tariqa. It is, to us, the truest sentence the maison has yet written.",
+        "works": {
+          "first": "Tariqa",
+          "second": "Atlas Smoke"
+        }
       }
     }
   },
