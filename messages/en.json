@@ -252,5 +252,228 @@
         "pull_quote": "We do not produce perfume. We finish a conversation that began in a field two years before."
       }
     }
+  },
+  "perfumeur": {
+    "title": "THE PERFUMERS · HANDS BEHIND THE BOTTLE",
+    "intro": "Three noses, three geographies, one obsession. Every bottle in our atelier carries the silent signature of the hand that composed it. Meet the perfumers we trust with our matter.",
+    "label": "PERFUMER",
+    "works_label": "REPRESENTATIVE WORKS",
+    "perfumers": {
+      "vasseur": {
+        "name": "Antoine Vasseur",
+        "country": "FR",
+        "roman": "I",
+        "bio_1": "Trained at ISIPCA in Versailles, Antoine spent eleven years inside the houses of the Marais before stepping out to compose in silence. He works in oils alone, never in alcohol, until the final week of a composition.",
+        "bio_2": "His palette is the Atlantic at dusk: iodine, wet leather, fig wood and the smell of stone after rain. He composes slowly, in twelves and twenty-fours, and rarely accepts more than three commissions a year.",
+        "bio_3": "We met him in 2023 in a converted printer's workshop in Pantin. He had been waiting, he said, for a maison that did not yet exist.",
+        "works": {
+          "first": "Nuit de Septembre",
+          "second": "Ombre Salée"
+        }
+      },
+      "elkhoury": {
+        "name": "Yasmin El-Khoury",
+        "country": "LB",
+        "roman": "II",
+        "bio_1": "Born in Beirut, trained in Grasse, Yasmin returned to the Levant after fifteen years in the south of France. She works from a small atelier above the old port, with the windows always open.",
+        "bio_2": "She composes from memory before formula. A grandmother's pantry, the cedar of a mountain shutter, a slow Sunday in Hamra. Her perfumes carry the structure of a Lebanese poem: dense, allusive, generous in the throat.",
+        "bio_3": "Her work has been worn quietly by the same forty collectors for over a decade. We are honoured to bring three of her compositions, for the first time, beyond their walls."
+      },
+      "belaid": {
+        "name": "Maurice Belaïd",
+        "country": "MA",
+        "roman": "III",
+        "bio_1": "Maurice is the youngest of the three, the most architectural in his thinking. Half Moroccan, half French, raised between Marrakech and Lyon, he treats each composition as a building: foundations, load-bearing notes, ornament.",
+        "bio_2": "He is fluent in oud — the resin, the wood, the smoke — and equally fluent in its restraint. He once told us that the difficulty of oud is not in adding it, but in knowing when to stop.",
+        "bio_3": "We commissioned him to compose our flagship in 2024. The piece is called Tariqa. It is, to us, the truest sentence the maison has yet written."
+      }
+    }
+  },
+  "bespoke": {
+    "title": "BESPOKE",
+    "subtitle": "A fragrance designed only for you.",
+    "intro_1": "A bespoke composition is not a fast object. It begins with a conversation, often two, sometimes three. We listen for places, weather, people, the smell of a particular room in a particular year.",
+    "intro_2": "From that, the perfumer works in private for six to twelve months. You receive samples, you respond, the formula moves. When it is finished, you receive between thirty and one hundred millilitres in a flacon engraved with your name, and the formula sealed in our archive.",
+    "intro_3": "We accept no more than twelve commissions a year. We invite you to write to us below.",
+    "form": {
+      "name": "NAME",
+      "email": "EMAIL",
+      "phone": "PHONE (OPTIONAL)",
+      "families": "PREFERRED FAMILIES",
+      "budget": "BUDGET",
+      "timeline": "TIMELINE",
+      "message": "TELL US WHAT YOU WOULD LIKE TO SMELL",
+      "submit": "SEND TO THE ATELIER",
+      "sending": "SENDING…",
+      "families_options": {
+        "floral": "Floral",
+        "amber": "Amber",
+        "oud": "Oud",
+        "woody": "Woody",
+        "chypre": "Chypre",
+        "leather": "Leather",
+        "aquatic": "Aquatic"
+      },
+      "budget_options": {
+        "low": "Less than 800 €",
+        "mid": "800 – 1 500 €",
+        "high": "1 500 – 3 000 €",
+        "top": "More than 3 000 €"
+      },
+      "timeline_options": {
+        "q1": "3 months",
+        "q2": "6 months",
+        "q3": "12 months",
+        "none": "No rush"
+      },
+      "errors": {
+        "name": "Please share your name.",
+        "email": "Enter a valid email.",
+        "phone": "That phone does not look right.",
+        "families": "Choose at least one olfactive family.",
+        "budget": "Select a budget range.",
+        "timeline": "Select a timeline.",
+        "message": "A few words, at least.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "success": "Thank you. Your atelier reference is {ref}. We respond within 7 days.",
+    "process": {
+      "title": "THE THREE MOVEMENTS",
+      "step_1_label": "I",
+      "step_1_title": "CONSULTATION",
+      "step_1_body": "A long conversation. We listen for the weather, the people, the rooms that you want to keep.",
+      "step_2_label": "II",
+      "step_2_title": "COMPOSITION",
+      "step_2_body": "Six to twelve months of work in private. Samples travel between you and the perfumer until the formula settles.",
+      "step_3_label": "III",
+      "step_3_title": "FLACONNAGE",
+      "step_3_body": "Your flacon, hand-engraved, in thirty to one hundred millilitres. The formula sealed under your name in our archive."
+    }
+  },
+  "boutique": {
+    "title": "BOUTIQUE · DUBAI",
+    "subtitle": "City Walk · Building 4 · Ground Floor.",
+    "intro": "Our flagship boutique sits at the quiet end of City Walk, between a small bookshop and a cinema. The room is lit low, the shelves are cedar, and there is always a perfumer or apprentice present to walk you through the collection.",
+    "address_label": "ADDRESS",
+    "address": "City Walk, Building 4, Ground Floor · Dubai, United Arab Emirates",
+    "hours_label": "HOURS",
+    "hours": "Open daily · 10:00 – 22:00 GST",
+    "phone_label": "PHONE",
+    "phone": "+971 4 000 0000",
+    "email_label": "EMAIL",
+    "email": "boutique@perfumesdubai.com",
+    "map_caption": "Marker · City Walk, Dubai",
+    "what_title": "WHAT TO EXPECT",
+    "what": {
+      "consultation": {
+        "title": "PRIVATE CONSULTATION",
+        "body": "Forty-five minutes with a perfumer, by appointment or on the day, in a quiet room behind the main floor."
+      },
+      "discovery": {
+        "title": "THE FULL COLLECTION",
+        "body": "Every active reference, including the editions held back from the website, on cedar shelves at room temperature."
+      },
+      "journey": {
+        "title": "JOURNEY BY FAMILY",
+        "body": "We walk you through the seven families in the order that flatters your skin chemistry, not ours."
+      },
+      "samples": {
+        "title": "CUSTOM SAMPLES",
+        "body": "Three to five samples of your choosing, hand-decanted into our glass vials, to live with for a week before deciding."
+      }
+    },
+    "cta": "BOOK YOUR VISIT →"
+  },
+  "journal": {
+    "title": "The Journal arrives this winter.",
+    "body_1": "An editorial publication, three times a year. Interviews with the perfumers we trust. Short essays on raw materials, on cities, on the strange history of why we wear scent at all.",
+    "body_2": "Subscribe quietly below. We will write to you when the first issue is bound, and not before.",
+    "arabic_aside": "نشرتنا قادمة",
+    "newsletter_cta": "Subscribe to the Journal"
+  },
+  "concierge": {
+    "title": "CONCIERGE",
+    "subtitle": "Direct line to the atelier.",
+    "intro": "For private orders, scent advice, or to schedule a visit to the boutique. We respond, in person, within twenty-four hours from Monday to Saturday.",
+    "form": {
+      "name": "NAME",
+      "email": "EMAIL",
+      "subject": "SUBJECT",
+      "message": "MESSAGE",
+      "submit": "SEND",
+      "sending": "SENDING…",
+      "subject_boutique": "Visit to the boutique",
+      "errors": {
+        "name": "Please share your name.",
+        "email": "Enter a valid email.",
+        "subject": "Add a short subject.",
+        "message": "A few words, at least.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "success": "Thank you. Your reference is {ref}. We will write to you within twenty-four hours.",
+    "channels": {
+      "title": "OTHER CHANNELS",
+      "email_label": "EMAIL",
+      "email": "concierge@perfumesdubai.com",
+      "whatsapp_label": "WHATSAPP",
+      "whatsapp": "+971 4 000 0000",
+      "response_label": "RESPONSE TIME",
+      "response": "Within 24 hours · Monday to Saturday"
+    }
+  },
+  "legal": {
+    "last_updated": "Last updated · MMXXVI · January",
+    "privacy": {
+      "title": "PRIVACY",
+      "intro": "Perfumes Dubai S.L. — a company registered in Spain and operating a boutique in Dubai — is committed to protecting your personal data with the same patience we apply to our compositions. This policy describes what we collect, why, and how you may exercise your rights.",
+      "sections": {
+        "s1_title": "I. DATA WE COLLECT",
+        "s1_body": "We collect only what is necessary: your name, email, phone (if you share it), shipping address if you order, and the messages you send through our forms. We do not buy data from third parties and we do not enrich your profile from external sources.",
+        "s2_title": "II. LEGAL BASIS",
+        "s2_body": "Article 6.1.b of the GDPR (performance of a contract) for orders and bespoke commissions. Article 6.1.a (consent) for the newsletter. Article 6.1.f (legitimate interest) for fraud prevention and service improvement.",
+        "s3_title": "III. RETENTION",
+        "s3_body": "Order data is retained for ten years for accounting purposes under Spanish law. Newsletter data is retained until you unsubscribe. Bespoke commission archives are retained indefinitely, at the client's request, since the formula belongs to them.",
+        "s4_title": "IV. INTERNATIONAL TRANSFER",
+        "s4_body": "Our boutique operations in the United Arab Emirates may require limited transfers of your data outside the European Economic Area. These transfers are governed by Standard Contractual Clauses approved by the European Commission.",
+        "s5_title": "V. YOUR RIGHTS",
+        "s5_body": "You may access, rectify, delete, port or restrict the processing of your data at any time. You may also withdraw your consent for the newsletter with a single click. To exercise these rights, write to privacy@perfumesdubai.com.",
+        "s6_title": "VI. CONTACT",
+        "s6_body": "Data Protection Officer · privacy@perfumesdubai.com. You may also lodge a complaint with the Spanish Data Protection Agency (AEPD)."
+      }
+    },
+    "terms": {
+      "title": "TERMS",
+      "intro": "By using this site or purchasing from Perfumes Dubai, you accept the terms below. We have written them in plain language, but they remain legally binding.",
+      "sections": {
+        "s1_title": "I. ACCEPTANCE",
+        "s1_body": "Your visit, registration or purchase constitutes acceptance of these terms as they appear on the date of your action.",
+        "s2_title": "II. INTELLECTUAL PROPERTY",
+        "s2_body": "Every image, text, formula, name and visual identity on this site is the property of Perfumes Dubai S.L. or its perfumers. No reproduction is permitted without prior written consent.",
+        "s3_title": "III. PRODUCTS",
+        "s3_body": "Our perfumes are made in small batches and may vary slightly between bottles. This is the nature of natural materials and we consider it part of the object. Allergen lists are included with every order.",
+        "s4_title": "IV. PRICES",
+        "s4_body": "Prices are shown in EUR, USD or AED according to your selection. Taxes and shipping are calculated at checkout. We reserve the right to modify prices at any time.",
+        "s5_title": "V. RETURNS",
+        "s5_body": "By European and UAE consumer law, perfumes once opened cannot be returned. Sealed bottles may be returned within fourteen days of receipt, in their original packaging, at the buyer's expense.",
+        "s6_title": "VI. JURISDICTION",
+        "s6_body": "The courts of Madrid, Spain, have jurisdiction for clients in the European Union. For clients in the United Arab Emirates, disputes are resolved through arbitration in the Dubai International Arbitration Centre (DIAC) under UAE law."
+      }
+    },
+    "cookies": {
+      "title": "COOKIES",
+      "intro": "We use the smallest number of cookies that allow this site to work. We do not track you across the open web.",
+      "sections": {
+        "s1_title": "I. ESSENTIAL",
+        "s1_body": "Session cookie, language preference, currency selection, cart contents. These are required for the site to function and cannot be disabled.",
+        "s2_title": "II. PERFORMANCE",
+        "s2_body": "Aggregate, anonymous traffic information through Vercel Analytics. No personal identifiers are stored.",
+        "s3_title": "III. MARKETING",
+        "s3_body": "None, by default. Should we ever introduce them, we will request your explicit consent through a banner before any cookie is set.",
+        "s4_title": "IV. PREFERENCES",
+        "s4_body": "You may clear your cookie preferences at any time by removing the pd-cookies-ack key from your browser storage, after which the banner will reappear on your next visit."
+      }
+    }
   }
 }

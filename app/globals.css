@@ -318,3 +318,49 @@ body {
     transition: none !important;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   VIEW TRANSITIONS · Fase 11
+   Enabled via next.config `experimental.viewTransition: true`.
+   The named `route-curtain` group is applied by components/layout/
+   RouteCurtain.tsx around <main>.
+   ─────────────────────────────────────────────────────────────── */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 600ms;
+  animation-timing-function: var(--ease-soft-expo);
+}
+
+::view-transition-old(route-curtain) {
+  animation: route-curtain-out 600ms var(--ease-soft-expo) both;
+}
+::view-transition-new(route-curtain) {
+  animation: route-curtain-in 600ms var(--ease-soft-expo) both;
+}
+
+@keyframes route-curtain-out {
+  to {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+@keyframes route-curtain-in {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0s !important;
+  }
+}

@@ -14,6 +14,8 @@ import { CustomCursor } from "@/components/cursor/CustomCursor";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { PreloaderMount } from "./preloader-mount";
+import { RouteCurtain } from "@/components/layout/RouteCurtain";
+import { PatienceToast } from "@/components/easter/PatienceToast";
 import "../globals.css";
 
 type LocaleParams = { locale: string };
@@ -73,9 +75,12 @@ export default async function LocaleLayout({
           <LenisProvider>
             <CustomCursor />
             <Navbar locale={locale} />
-            <main className="min-h-screen">{children}</main>
+            <main className="min-h-screen">
+              <RouteCurtain>{children}</RouteCurtain>
+            </main>
             <Footer locale={locale} />
             <CookieBanner />
+            <PatienceToast />
           </LenisProvider>
         </NextIntlClientProvider>
       </body>
