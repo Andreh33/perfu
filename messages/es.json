@@ -105,5 +105,16 @@
     "es": "Español",
     "en": "English",
     "ar": "العربية"
+  },
+  "preloader": {
+    "assembling": "ENSAMBLANDO ESENCIA",
+    "labels": {
+      "shaders": "CARGANDO SHADERS",
+      "textures": "OBTENIENDO TEXTURAS",
+      "scene": "PREPARANDO ESCENA",
+      "composing": "COMPONIENDO",
+      "timeout": "TARDANDO MÁS · QUEDÉSE"
+    },
+    "arabic_badge": "صبراً جميلاً"
   }
 }

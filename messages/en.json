@@ -105,5 +105,16 @@
     "es": "Español",
     "en": "English",
     "ar": "العربية"
+  },
+  "preloader": {
+    "assembling": "ASSEMBLING ESSENCE",
+    "labels": {
+      "shaders": "LOADING SHADERS",
+      "textures": "FETCHING TEXTURES",
+      "scene": "PREPARING SCENE",
+      "composing": "COMPOSING",
+      "timeout": "TAKING LONGER · STAY WITH US"
+    },
+    "arabic_badge": "صبراً جميلاً"
   }
 }
