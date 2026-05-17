@@ -21,14 +21,20 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "EST. DUBAI · MMXXVI · MAISON DE PARFUM",
+      "eyebrow": "FUNDADA DUBAI · MMXXVI · MAISON DE PARFUM",
       "title": "El arte de la fragancia, destilado del desierto y el tiempo.",
-      "subtitle": "Cada esencia, una memoria. Cada frasco, un horizonte.",
+      "title_line1": "EL ARTE /",
+      "title_line2": "DEL PERFUME",
+      "subtitle": "Forjado en el desierto. Llevado en todos los mundos.",
       "cta": "ENTRAR AL ATELIER →"
     },
     "links": {
       "styleguide": "Ver sistema de diseño →"
     }
+  },
+  "audio": {
+    "toggle_on": "Sonido activado",
+    "toggle_off": "Sonido apagado"
   },
   "manifesto": {
     "phrases": {

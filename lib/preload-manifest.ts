@@ -22,4 +22,10 @@ export type CriticalAsset =
   | { kind: "texture"; url: string }
   | { kind: "gltf"; url: string };
 
-export const criticalAssets: ReadonlyArray<CriticalAsset> = [];
+export const criticalAssets: ReadonlyArray<CriticalAsset> = [
+  // B2 · Hero — static fallback used when WebGL is unavailable / reduced motion.
+  // The interactive shader does not need any external textures (FBM noise is
+  // generated procedurally on the GPU), so the manifest stays intentionally
+  // small to keep the preloader curtain short.
+  { kind: "image", url: "/hero-fallback.jpg" },
+];

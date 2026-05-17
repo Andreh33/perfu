@@ -73,6 +73,7 @@ export function Preloader({ copy }: PreloaderProps) {
       // No choreography under reduced-motion: brief fade and remove.
       setPhase("done");
       window.setTimeout(() => {
+        (window as typeof window & { __pdPreloaderDone?: boolean }).__pdPreloaderDone = true;
         window.dispatchEvent(new CustomEvent("preloader:done"));
       }, 16);
       return;
@@ -90,6 +91,7 @@ export function Preloader({ copy }: PreloaderProps) {
     // T+1040 + 1100 = T+2140 — fully revealed, unmount + signal.
     window.setTimeout(() => {
       setPhase("done");
+      (window as typeof window & { __pdPreloaderDone?: boolean }).__pdPreloaderDone = true;
       window.dispatchEvent(new CustomEvent("preloader:done"));
     }, 320 + 720 + 1100);
   }, []);
