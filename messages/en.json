@@ -105,5 +105,66 @@
     "es": "Español",
     "en": "English",
     "ar": "العربية"
+  },
+  "atelier": {
+    "breadcrumb": {
+      "home": "HOME",
+      "atelier": "ATELIER"
+    },
+    "title": "THE ATELIER",
+    "subtitle": "Twenty fragrances composed slowly, by perfumers who refuse to hurry.",
+    "counter": "{n} fragrances",
+    "counter_filtered": "{n} of {total}",
+    "filters": {
+      "title": "FILTERS",
+      "family": "OLFACTIVE FAMILY",
+      "gender": "GENDER",
+      "intensity": "INTENSITY",
+      "price": "PRICE",
+      "size": "SIZE",
+      "year": "YEAR",
+      "clear_all": "CLEAR",
+      "open": "FILTERS",
+      "close": "CLOSE",
+      "apply": "SEE RESULTS"
+    },
+    "views": {
+      "label": "VIEW",
+      "grid": "GRID",
+      "list": "LIST"
+    },
+    "sort": {
+      "label": "SORT",
+      "featured": "Featured",
+      "price_asc": "Price · low to high",
+      "price_desc": "Price · high to low",
+      "year_desc": "Newest"
+    },
+    "card": {
+      "from": "FROM",
+      "acquire": "ACQUIRE",
+      "notes": "TOP NOTES",
+      "limited": "LIMITED",
+      "new": "NEW",
+      "bestseller": "SIGNATURE"
+    },
+    "genders": {
+      "masculine": "Masculine",
+      "feminine": "Feminine",
+      "unisex": "Unisex"
+    },
+    "intensities": {
+      "eau_de_parfum": "Eau de Parfum",
+      "extrait": "Extrait de Parfum",
+      "parfum": "Parfum"
+    },
+    "sizes": {
+      "ml50": "50 ml",
+      "ml100": "100 ml"
+    },
+    "empty": {
+      "title": "Nothing matches yet.",
+      "subtitle": "Loosen a filter, or clear them all."
+    }
   }
 }
