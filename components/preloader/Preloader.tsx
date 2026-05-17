@@ -190,10 +190,12 @@ export function Preloader({ copy }: PreloaderProps) {
     };
   }, [beginExit]);
 
-  if (phase === "done") {
-    return null;
-  }
-
+  // IMPORTANT: never return null. Unmounting this complex subtree (nested SVG
+  // text + multiple absolutely-positioned divs at the body root) intermittently
+  // produced `removeChild` NotFoundError in React 19's commit phase, especially
+  // when the inline body::after grain overlay or browser extensions altered
+  // body children between renders. We keep the DOM tree alive forever and just
+  // hide it from layout + paint + a11y once the choreography ends.
   const pct = Math.round(progress * 100);
   let currentLabel: string;
   if (isSlow) {
@@ -216,19 +218,26 @@ export function Preloader({ copy }: PreloaderProps) {
         ? "down"
         : "idle";
 
+  const isDone = phase === "done";
+
   return (
     <div
       data-preloader
-      role="progressbar"
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-valuenow={pct}
-      aria-label={copy.assembling}
+      role={isDone ? "presentation" : "progressbar"}
+      aria-hidden={isDone ? true : undefined}
+      aria-valuemin={isDone ? undefined : 0}
+      aria-valuemax={isDone ? undefined : 100}
+      aria-valuenow={isDone ? undefined : pct}
+      aria-label={isDone ? undefined : copy.assembling}
       style={{
         position: "fixed",
         inset: 0,
         zIndex: 10000,
-        pointerEvents: "auto",
+        // Hidden from paint, layout and pointer events after the exit
+        // choreography completes. We do NOT unmount the subtree — see the
+        // comment above the early-return removal.
+        pointerEvents: isDone ? "none" : "auto",
+        visibility: isDone ? "hidden" : "visible",
         background: "var(--obsidian-400)",
         color: "var(--ink-100)",
         contain: "strict",
