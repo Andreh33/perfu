@@ -105,5 +105,16 @@
     "es": "Español",
     "en": "English",
     "ar": "العربية"
+  },
+  "preloader": {
+    "assembling": "تركيب الجوهر",
+    "labels": {
+      "shaders": "تحميل الشيدرز",
+      "textures": "جلب القوام",
+      "scene": "تجهيز المشهد",
+      "composing": "تركيب",
+      "timeout": "يستغرق وقتاً · انتظرنا"
+    },
+    "arabic_badge": "صبراً جميلاً"
   }
 }

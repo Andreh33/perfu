@@ -13,6 +13,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/cursor/CustomCursor";
 import { LenisProvider } from "@/components/layout/LenisProvider";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { PreloaderMount } from "./preloader-mount";
 import "../globals.css";
 
 type LocaleParams = { locale: string };
@@ -63,6 +64,11 @@ export default async function LocaleLayout({
           isRtl ? "font-arabic" : "font-body"
         } bg-[var(--obsidian-400)] text-[var(--ink-100)] antialiased`}
       >
+        {/* Preloader is mounted OUTSIDE of <LenisProvider> and before the
+            i18n client provider so it appears on the very first paint, before
+            Lenis can take over scroll. It receives copy as plain props from a
+            server wrapper, so it does not depend on client hydration. */}
+        <PreloaderMount locale={locale} />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <LenisProvider>
             <CustomCursor />
