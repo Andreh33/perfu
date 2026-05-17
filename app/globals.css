@@ -206,9 +206,26 @@ body {
   height: 0;
 }
 
-/* TODO Fase 3: enable global grain overlay once /public/textures/grain-fine.png
-   is replaced by a real 256x256 noise texture (currently a 1x1 transparent
-   placeholder). Apply via body::after with mix-blend-mode: overlay; opacity: .04. */
+/* Global film grain overlay — inlined SVG turbulence noise (no external asset).
+   Uses feTurbulence at fractalNoise with high baseFrequency for fine grain.
+   Pinned to viewport, ignored by pointer events, blends multiply for warm cast. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.91  0 0 0 0 0.78  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 240px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    opacity: 0.03;
+  }
+}
 
 @media (pointer: fine) {
   body.has-custom-cursor,
