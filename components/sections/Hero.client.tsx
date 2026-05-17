@@ -6,7 +6,6 @@
 
 import dynamic from "next/dynamic";
 import {
-  Suspense,
   useEffect,
   useRef,
   useState,
@@ -179,31 +178,25 @@ export function HeroClient({
 
   return (
     <div ref={containerRef} className="absolute inset-0">
-      {/* WebGL canvas — replaced by a static image under reduced motion. */}
+      {/* WebGL canvas always rendered behind a stable <img>; we DO NOT use
+          Suspense fallback swap because the SSR/CSR boundary collision with
+          R3F's portal under React 19 + dynamic+ssr:false produces a
+          NotFoundError on commit (`removeChild`). Instead the image is the
+          first paint, and the canvas overlays it once mounted, fading the
+          image out. */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {reducedMotion ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={fallbackSrc}
-            alt={fallbackAlt}
-            className="h-full w-full object-cover"
-            draggable={false}
-          />
-        ) : (
-          <Suspense
-            fallback={
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={fallbackSrc}
-                alt={fallbackAlt}
-                className="h-full w-full object-cover"
-                draggable={false}
-              />
-            }
-          >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={fallbackSrc}
+          alt={fallbackAlt}
+          className="h-full w-full object-cover"
+          draggable={false}
+        />
+        {!reducedMotion ? (
+          <div className="absolute inset-0">
             <Hero3D active={canvasActive} />
-          </Suspense>
-        )}
+          </div>
+        ) : null}
       </div>
 
       {/* Children = textual overlay (server-rendered with the refs above). */}
