@@ -509,5 +509,13 @@
         "s4_body": "Puedes restablecer tus preferencias eliminando la clave pd-cookies-ack del almacenamiento de tu navegador; el banner reaparecerá en tu próxima visita."
       }
     }
+  },
+  "checkout_success": {
+    "eyebrow": "PEDIDO · CONFIRMADO",
+    "title": "El atelier te agradece.",
+    "ordered": "Tu adquisición de {name} ya viaja hacia ti.",
+    "body": "Cada frasco se envuelve y numera a mano antes de partir. Llega en un máximo de siete días laborables. Recibirás la confirmación por correo.",
+    "cta_continue": "VOLVER AL ATELIER →",
+    "cta_concierge": "ESCRIBIR AL CONCIERGE →"
   }
 }

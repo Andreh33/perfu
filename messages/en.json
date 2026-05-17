@@ -509,5 +509,13 @@
         "s4_body": "You may clear your cookie preferences at any time by removing the pd-cookies-ack key from your browser storage, after which the banner will reappear on your next visit."
       }
     }
+  },
+  "checkout_success": {
+    "eyebrow": "ORDER · CONFIRMED",
+    "title": "The atelier thanks you.",
+    "ordered": "Your acquisition of {name} is on its way.",
+    "body": "We hand-wrap and number every flacon before it leaves. Expect delivery within seven working days. A confirmation has reached your inbox.",
+    "cta_continue": "RETURN TO THE ATELIER →",
+    "cta_concierge": "MESSAGE THE CONCIERGE →"
   }
 }
