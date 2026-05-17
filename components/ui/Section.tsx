@@ -13,9 +13,13 @@ const spacingMap = {
   cinematic: "py-[var(--space-10)] md:py-[var(--space-12)]",
 } as const;
 
+// "void" is transparent — lets the layered body bg (warm gradients + halo +
+// grain) bleed through. "elevated" uses the new pd-elevated utility which
+// carries a hairline gold border + warm tint. "ink" inverts to marfil on
+// obsidian text (used sparingly).
 const toneMap = {
-  void: "bg-[var(--obsidian-400)]",
-  elevated: "bg-[var(--obsidian-200)]",
+  void: "bg-transparent",
+  elevated: "pd-elevated",
   ink: "bg-[var(--ink-100)] text-[var(--obsidian-400)]",
 } as const;
 

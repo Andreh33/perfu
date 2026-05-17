@@ -56,23 +56,41 @@ export async function Hero({ locale }: HeroProps) {
           empty alt is the correct WCAG signal for a decorative image. */}
       <HeroClient fallbackSrc={FALLBACK_SRC} fallbackAlt="">
         {/* z-1 — grain overlay (mix-blend overlay over the canvas). */}
+        {/* z-1 — extra atmospheric gold haze drawn over the canvas to push
+            warmth + depth. Adds an upper-left ambient glow (as if a window
+            cast warm light onto the smoke) and a darker lower-right zone.
+            Cheaper than another shader pass and reads beautifully on dpr 1. */}
         <div
           aria-hidden
-          className="absolute inset-0 z-[1] pointer-events-none mix-blend-overlay opacity-[0.06]"
+          className="absolute inset-0 z-[1] pointer-events-none"
           style={{
-            backgroundImage: "url('/textures/grain-fine.png')",
-            backgroundSize: "256px 256px",
-            backgroundRepeat: "repeat",
+            background:
+              "radial-gradient(ellipse 60% 70% at 20% 25%, rgba(212, 182, 119, 0.12) 0%, transparent 55%), " +
+              "radial-gradient(ellipse 50% 55% at 80% 85%, rgba(0, 0, 0, 0.35) 0%, transparent 60%)",
+            mixBlendMode: "screen",
           }}
         />
 
-        {/* z-2 — radial vignette on top of the canvas + grain. */}
+        {/* z-2 — cinematic edge vignette. Heavier corners so the eye lands
+            on the text. Replaces the prior radial — softer in centre, much
+            stronger at edges (filmic). */}
         <div
           aria-hidden
           className="absolute inset-0 z-[2] pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)",
+              "radial-gradient(ellipse 110% 90% at 50% 55%, transparent 45%, rgba(0,0,0,0.55) 90%, rgba(0,0,0,0.8) 100%)",
+          }}
+        />
+
+        {/* z-2.5 — soft gold edge bloom at the very top to suggest a slim
+            light line. Sits under the text. */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 z-[2] pointer-events-none h-[180px]"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(184, 147, 90, 0.08) 0%, transparent 100%)",
           }}
         />
 

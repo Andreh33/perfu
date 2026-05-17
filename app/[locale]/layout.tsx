@@ -137,6 +137,10 @@ export default async function LocaleLayout({
             Lenis can take over scroll. It receives copy as plain props from a
             server wrapper, so it does not depend on client hydration. */}
         <GlobalErrorCapture />
+        {/* Global vignette — sits above body bg + ambient halo + grain.
+            Drawn as a discrete element (not a body pseudo) so it does NOT
+            interfere with React reconciliation. */}
+        <div className="pd-vignette" aria-hidden />
         <PreloaderMount locale={locale} />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <LenisProvider>

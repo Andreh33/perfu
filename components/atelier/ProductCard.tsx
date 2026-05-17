@@ -106,27 +106,56 @@ export function ProductCard({
     <article
       ref={ref}
       className={cn(
-        "group/card relative isolate flex flex-col bg-[var(--obsidian-200)] p-[var(--space-5)]",
+        "group/card relative isolate flex flex-col p-[var(--space-5)]",
         "overflow-hidden",
+        // Warm-tinted card surface: subtle gold wash baked into the bg.
+        // Hairline gold border-top (with fade) + a faint inner shadow.
+        "border-t border-[var(--gold-200)]/[0.08]",
+        "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.02),inset_0_-40px_40px_-40px_rgba(0,0,0,0.4)]",
+        "transition-[background,border-color] duration-[var(--duration-medium)] ease-[var(--ease-soft-expo)]",
+        "hover:border-[var(--gold-200)]/[0.25]",
       )}
+      style={{
+        perspective: "800px",
+        background:
+          "linear-gradient(180deg, rgba(184,147,90,0.05) 0%, transparent 30%), var(--obsidian-200)",
+      }}
       data-card-index={index}
       data-card-size={size}
-      style={{ perspective: "800px" }}
     >
-      {/* radial lighting */}
+      {/* warm radial lighting — stronger than before */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 40%, rgba(184,147,90,0.08) 0%, transparent 50%)",
+            "radial-gradient(ellipse at 30% 35%, rgba(212,182,119,0.14) 0%, rgba(184,147,90,0.04) 35%, transparent 65%)",
         }}
       />
 
-      {/* gold vertical stripe drawing on hover */}
+      {/* ambient hover glow — appears behind the bottle on hover */}
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-0 -z-10 opacity-0",
+          "transition-opacity duration-[var(--duration-slow)] ease-[var(--ease-soft-expo)]",
+          "group-hover/card:opacity-100",
+        )}
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 55% at 50% 45%, rgba(212,182,119,0.16) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* gold vertical stripe drawing on hover — thicker, with glow */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 w-px origin-bottom scale-y-0 bg-[var(--gold-200)] transition-transform duration-[600ms] ease-[var(--ease-soft-expo)] group-hover/card:scale-y-100"
+        className={cn(
+          "pointer-events-none absolute inset-y-0 left-0 w-px origin-bottom scale-y-0",
+          "bg-[var(--gold-200)] transition-transform duration-[600ms] ease-[var(--ease-soft-expo)]",
+          "group-hover/card:scale-y-100",
+        )}
+        style={{ boxShadow: "0 0 8px 1px rgba(184, 147, 90, 0.4)" }}
       />
 
       {/* edition/new/bestseller tags */}

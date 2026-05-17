@@ -4,23 +4,21 @@
    PERFUMES DUBAI · DESIGN TOKENS
    ─────────────────────────────────────────────────────────────── */
 :root {
-  /* INK
-     Note (Fase 12 a11y): `--ink-400` nudged from #7a6f5c → #8a7e69 so that
-     small captions sitting on `--obsidian-400` (#08080a) reach the WCAG AA
-     4.5:1 minimum (computed 4.55:1). Used for muted captions, footnotes and
-     metadata. The visual difference is imperceptible (one step warmer) but
-     the contrast bump matters for screen-reader users in low-light. */
+  /* INK */
   --ink-100: #f5f1e8;
   --ink-200: #e8dfc9;
   --ink-300: #b8a98c;
   --ink-400: #8a7e69;
   --ink-500: #4a4438;
 
-  /* OBSIDIAN */
-  --obsidian-100: #1f1f1d;
-  --obsidian-200: #18181a;
-  --obsidian-300: #0f0f11;
-  --obsidian-400: #08080a;
+  /* OBSIDIAN — warm espresso, NOT flat black. Each step carries a
+     subtle cocoa hue so the canvas reads as an atelier interior at dusk,
+     not a void. Verified WCAG AA against --ink-100 (>14:1) and --ink-400
+     (≥4.5:1) for the new --obsidian-400 of #100c08. */
+  --obsidian-100: #221b13;
+  --obsidian-200: #1a1410;
+  --obsidian-300: #150f0a;
+  --obsidian-400: #100c08;
 
   /* GOLD */
   --gold-100: #d4b677;
@@ -114,16 +112,61 @@
 
 html,
 body {
-  background: var(--obsidian-400);
   color: var(--ink-100);
   font-family: var(--font-body);
   font-feature-settings: "kern", "calt";
 }
 
+/* The body canvas is NEVER flat. Two layered radial gradients carry warm
+   gold light from the upper-left (as if a single lamp lit the atelier) and
+   a deeper espresso tone from the lower-right (the unlit half of the room).
+   Combined with the SVG turbulence grain in body::after the surface reads
+   as an interior in low light — not a black rectangle. */
 body {
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 18% 12%,
+      rgba(184, 147, 90, 0.10) 0%,
+      rgba(184, 147, 90, 0.04) 30%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 70% 60% at 85% 85%,
+      rgba(92, 70, 40, 0.18) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 140% 100% at 50% 50%,
+      var(--obsidian-300) 0%,
+      var(--obsidian-400) 70%
+    ),
+    var(--obsidian-400);
+}
+
+/* Ambient gold halo — a single very large soft glow fixed at the upper
+   third of the viewport. Travels with the user as they scroll so each
+   section feels lit by the same warm source. Decorative only. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 50% 0%,
+      rgba(212, 182, 119, 0.06) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 10% 100%,
+      rgba(184, 147, 90, 0.04) 0%,
+      transparent 60%
+    );
+  mix-blend-mode: screen;
 }
 
 ::selection {
@@ -211,25 +254,80 @@ body {
   height: 0;
 }
 
-/* Global film grain overlay — inlined SVG turbulence noise (no external asset).
-   Uses feTurbulence at fractalNoise with high baseFrequency for fine grain.
-   Pinned to viewport, ignored by pointer events, blends multiply for warm cast. */
+/* Global film grain overlay — inlined SVG turbulence noise. Sits above the
+   ambient halo but below interactive content. Opacity 0.09 (up from 0.05)
+   so the grain is actually felt — like a 35 mm push process — not a CSS
+   afterthought. The colour matrix biases noise toward warm gold so the
+   grain reinforces atmosphere instead of muddying it. */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.09;
   mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.91  0 0 0 0 0.78  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  background-size: 240px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch' seed='7'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.85  0 0 0 0 0.62  0 0 0 0.85 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 280px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   body::after {
-    opacity: 0.03;
+    opacity: 0.05;
   }
+}
+
+/* Vignette — top + bottom darker so the eye lands centre. Independent of
+   the ambient halo, drawn as a third fixed layer. */
+.pd-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 140% 100% at 50% 50%,
+      transparent 55%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+}
+
+/* Section elevation — when sections want to feel "lifted" they get this
+   subtle gold-tinted inner glow + a hairline gold border-top. Applied to
+   elevated Section tones. */
+.pd-elevated {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(184, 147, 90, 0.04) 0%,
+      transparent 30%
+    ),
+    var(--obsidian-200);
+  border-top: 1px solid rgba(184, 147, 90, 0.08);
+  border-bottom: 1px solid rgba(184, 147, 90, 0.05);
+}
+
+/* Hairline divider used between editorial sections — a 1 px gold line that
+   fades at both ends. Sits centred, max-width 320 px. */
+.pd-hairline {
+  display: block;
+  width: 320px;
+  max-width: 80%;
+  height: 1px;
+  margin: var(--space-7) auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(184, 147, 90, 0.6) 50%,
+    transparent 100%
+  );
+}
+
+/* All "real" content needs to sit above the ambient halo (z:0), grain (z:1)
+   and vignette (z:2). Apply to the layout root <main> if not already. */
+main {
+  position: relative;
+  z-index: 3;
 }
 
 @media (pointer: fine) {

@@ -105,17 +105,35 @@ export const fragmentShader = /* glsl */ `
     // ── Vertical gradient — heavier at the top, lighter at the bottom
     float vertical = smoothstep(0.0, 1.0, vUv.y);
 
-    // ── Maison palette ───────────────────────────────────────────────
-    const vec3 obsidian = vec3(0.031, 0.031, 0.039); // --obsidian-400
+    // ── Maison palette — warm espresso base, deeper gold accents.
+    //    Updated to match the new obsidian palette (#100c08) and to give
+    //    the smoke a richer caramel core so the Hero feels lit, not black.
+    const vec3 obsidian = vec3(0.063, 0.047, 0.031); // --obsidian-400 #100c08
+    const vec3 cocoa    = vec3(0.105, 0.075, 0.047); // intermediate warm
     const vec3 deepGold = vec3(0.557, 0.431, 0.247); // --gold-300
     const vec3 gold     = vec3(0.722, 0.576, 0.353); // --gold-200
+    const vec3 highGold = vec3(0.831, 0.714, 0.467); // --gold-100
 
-    vec3 color = mix(obsidian, deepGold, smoke * vertical * 0.6);
-    color = mix(color, gold, smoke * smoke * vertical * 0.4);
+    // Three-stage mix so the haze travels through brown→deepGold→gold→
+    // highlight gold rather than jumping flat. Vertical bias keeps light
+    // concentrated in the upper third of the frame.
+    vec3 color = mix(obsidian, cocoa, smoke * 0.7);
+    color = mix(color, deepGold, smoke * vertical * 0.55);
+    color = mix(color, gold,     smoke * smoke * vertical * 0.45);
+    color = mix(color, highGold, pow(smoke, 3.0) * vertical * 0.25);
 
-    // ── Radial vignette ──────────────────────────────────────────────
-    float vig = 1.0 - smoothstep(0.4, 1.2, length(vUv - 0.5));
+    // ── Subtle warm ambient (the smoke is never completely absent of
+    //    light, even where smoke == 0) ────────────────────────────────
+    color += vec3(0.025, 0.018, 0.010) * (1.0 - smoke);
+
+    // ── Radial vignette — heavier so the centre reads cinematic ─────
+    float vig = 1.0 - smoothstep(0.35, 1.15, length(vUv - 0.5));
     color *= vig;
+
+    // ── Chromatic warmth — pull blue down a touch, lift red. Free
+    //    "filmic" tone without a postprocess pass ─────────────────────
+    color.r *= 1.04;
+    color.b *= 0.92;
 
     gl_FragColor = vec4(color, 1.0);
   }
