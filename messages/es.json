@@ -30,6 +30,16 @@
       "styleguide": "Ver sistema de diseño →"
     }
   },
+  "manifesto": {
+    "phrases": {
+      "p1": "No vendemos perfume.",
+      "p2_a": "Embotellamos",
+      "p2_b": "memoria.",
+      "p3": "Tres mil años de attar, destilados.",
+      "p4": "Lo llevan quienes nunca se explican."
+    },
+    "frame_caption": ""
+  },
   "footer": {
     "newsletter": {
       "title": "Para lo escaso y lo susurrado.",
