@@ -187,5 +187,70 @@
       "title": "Nada coincide aún.",
       "subtitle": "Afloja un filtro, o límpialos todos."
     }
+  },
+  "maison": {
+    "eyebrow": "EL ARTE DEL PERFUME",
+    "eyebrow_section": "MAISON",
+    "title": "Cartas desde el atelier.",
+    "intro_paragraph_1": "No medimos el perfume en mililitros. Lo medimos en estaciones, en la hora exacta en la que una flor decide abrirse, en el silencio de bodegas donde el cobre y el roble enseñan, despacio, a un aceite a hablar. El tiempo, aquí, es el primer ingrediente — y el más caro.",
+    "intro_paragraph_2": "Lo que sigue no es un folleto. Son cuatro cartas breves desde dentro del taller: los campos al amanecer, el alambique al mediodía, el largo sueño de la maceración y la ceremonia final de verter una esencia en cristal. Léelas despacio. La fragancia, como la prosa, nunca quiso tener prisa.",
+    "chapter": {
+      "recolte": {
+        "title_short": "La Cosecha",
+        "title": "Los campos despiertan antes que nosotros.",
+        "_image_query": "rose damascena harvest dawn dark mood",
+        "image_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Pétalos de rosa damascena recogidos al alba en un cesto de madera.",
+        "paragraphs": [
+          "Antes de que el sol decida dónde colocarse, las recolectoras ya están de rodillas. La damascena debe cortarse mientras el rocío aún pesa sobre ella; una sola hora más tarde y la rosa ya se ha olvidado de sí misma. No somos dueños de estos campos en Grasse, en el valle de Isparta, en las llanuras blancas de Mysore. Se los pedimos prestados a la noche, y la noche cobra su alquiler en paciencia.",
+          "Un kilogramo de absoluto de rosa pedirá casi cinco toneladas de pétalos frescos — una pequeña montaña de color reducida a un dedal de alma. Las manos que hacen este trabajo son casi siempre manos de mujeres, y casi siempre silenciosas. Hay una especie de rezo en arrancar una flor sin magullarle el tallo.",
+          "Hemos aprendido, después de años, a confiar en las recolectoras más que en el calendario. Cuando dicen que la cosecha empieza un martes, empieza un martes, sin importar lo que hayamos escrito en el catálogo. La flor, después de todo, es el único contrato honesto.",
+          "Hacia las once de la mañana el calor ya ha decidido. Lo que no recogimos antes está perdido para el perfume, y pertenece ya, por entero, a las abejas."
+        ],
+        "pull_quote": "Una flor cortada una hora demasiado tarde ya ha empezado a olvidar su propio nombre."
+      },
+      "alambic": {
+        "title_short": "El Alambique",
+        "title": "El cobre aprende el idioma del vapor.",
+        "_image_query": "antique copper alembic distillation steam dark",
+        "image_url": "https://images.unsplash.com/photo-1582106245687-cbb466a9f07f?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Alambique antiguo de cobre reflejando luz tenue durante la destilación.",
+        "paragraphs": [
+          "Los pétalos llegan al alambique en cajones bajos de madera, todavía tibios, todavía algo húmedos del campo. Se pesan y se vierten en el vientre de cobre del alambique — un instrumento diseñado en los talleres medievales de al-Ándalus y mejorado, casi imperceptiblemente, en cada siglo desde entonces. El cobre, a diferencia del acero, escucha.",
+          "El fuego se aplica con cuidado, como un músico se acerca a una nota larga. Demasiado pronto y la rosa se quema; demasiado despacio y el perfume se duerme antes de poder elevarse. El vapor sube atravesando los pétalos, recoge su aceite, condensa en el cuello de cisne, y cae — gota a gota, hora tras hora — en un receptor de vidrio.",
+          "Ocho kilos de flor darán, tras toda una tarde, quizá una cucharadita de aceite esencial claro, casi incoloro, que huele, improbablemente, a todo lo que el campo prometía al amanecer. Junto a él, un agua perfumada — el hidrolato — que nuestro perfumista guarda para sus fórmulas privadas y casi nunca vende.",
+          "Tenemos un solo maestro destilador. Él le habla al cobre. Insiste en que el cobre responde."
+        ],
+        "pull_quote": "El fuego no transforma la rosa; sólo la convence de que se recuerde."
+      },
+      "maceration": {
+        "title_short": "La Maceración",
+        "title": "Meses de silencio, y después un solo sí.",
+        "_image_query": "wooden barrels cellar dim slow time amber",
+        "image_url": "https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Barricas de madera envejecidas descansando en una bodega en penumbra.",
+        "paragraphs": [
+          "Una vez que el perfumista ha compuesto su fórmula — una larga discusión entre salida, corazón y fondo, resuelta a veces en una tarde, resistida otras durante años — el perfume se vierte en vidrio y se guarda bajo llave. La bodega se mantiene a catorce grados constantes, ligeramente húmeda, casi a oscuras. La luz, como la prisa, es un enemigo.",
+          "Lo que sucede en esas semanas no puede fotografiarse. Las moléculas negocian. Aldehídos que llegaron demasiado altos se vuelven considerados. Resinas que parecían reacias encuentran su contraparte. Una fórmula que el primer día olía meramente correcta empezará, para la octava semana, a oler inevitable. Esa es la diferencia entre un perfume y un aroma.",
+          "Algunas de nuestras composiciones piden dieciséis semanas. Las que parten del oud, seis meses. Nunca hemos lanzado un perfume contra una fecha, porque no existe ninguna fecha que una molécula esté dispuesta a respetar. La bodega decide. Obedecemos, y esperamos.",
+          "Cuando el perfumista por fin abre el armario, eleva un vial a la luz y respira — y guarda silencio durante un largo instante — sabemos que ya casi estamos listos."
+        ],
+        "pull_quote": "La paciencia no es una virtud en nuestra bodega. Es el único material disponible."
+      },
+      "flacon": {
+        "title_short": "El Embotellado",
+        "title": "Cada frasco firmado, numerado, sellado.",
+        "_image_query": "perfume bottle hand-numbered atelier wax seal candlelight",
+        "image_url": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1600&q=85&auto=format&fit=crop",
+        "image_alt": "Frasco ámbar de perfume numerado a mano y sellado con cera dorada.",
+        "paragraphs": [
+          "Los frascos llegan de una pequeña cristalería a las afueras de Murano, donde la misma familia ha estado soplando cristal desde el siglo diecisiete. Cada uno pesa más de lo que aparenta; cada uno lleva, cerca de la base, una diminuta inclusión de pan de oro, que el maestro insiste en que no es decoración sino identificación.",
+          "El frasco se llena a mano, despacio, con una pipeta de cuello largo. El aire, en cualquier cantidad medible, es el tercer enemigo del perfume — después de la luz y la prisa — y tratamos cada mililitro como si fuera el último. El frasco se pesa entonces, se tapa y se prensa con un sello cálido de cera del color de la miel oscura.",
+          "En la base de cada frasco, en un fino grabado caligráfico, el perfumista escribe un número. Tres dígitos, nunca más. Cuando el tercer dígito cierra una serie, la fórmula vuelve a la bodega, la bodega cierra el armario, y empezamos de nuevo desde un campo, en otra estación, en otro país.",
+          "Lo que descorchas en casa fue, hace dos años, un rumor de rodillas sobre el rocío. Es el único marketing que estamos dispuestos a hacer."
+        ],
+        "pull_quote": "No producimos perfume. Terminamos una conversación que comenzó en un campo dos años antes."
+      }
+    }
   }
 }
