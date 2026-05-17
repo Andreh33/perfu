@@ -105,5 +105,228 @@
     "es": "Español",
     "en": "English",
     "ar": "العربية"
+  },
+  "perfumeur": {
+    "title": "LOS PERFUMISTAS · MANOS DETRÁS DEL FRASCO",
+    "intro": "Tres narices, tres geografías, una misma obsesión. Cada frasco de nuestro atelier lleva la firma silenciosa de la mano que lo compuso. Conoce a los perfumistas a quienes confiamos nuestra materia.",
+    "label": "PERFUMISTA",
+    "works_label": "OBRAS REPRESENTATIVAS",
+    "perfumers": {
+      "vasseur": {
+        "name": "Antoine Vasseur",
+        "country": "FR",
+        "roman": "I",
+        "bio_1": "Formado en ISIPCA, en Versalles, Antoine pasó once años en las casas del Marais antes de retirarse a componer en silencio. Trabaja en aceites hasta la última semana de cada composición; el alcohol llega después.",
+        "bio_2": "Su paleta es el Atlántico al anochecer: yodo, cuero mojado, madera de higuera y el olor de la piedra después de la lluvia. Compone despacio, en docenas, y rara vez acepta más de tres encargos al año.",
+        "bio_3": "Lo conocimos en 2023 en un antiguo taller de imprenta de Pantin. Llevaba años, dijo, esperando una maison que aún no existía.",
+        "works": {
+          "first": "Nuit de Septembre",
+          "second": "Ombre Salée"
+        }
+      },
+      "elkhoury": {
+        "name": "Yasmin El-Khoury",
+        "country": "LB",
+        "roman": "II",
+        "bio_1": "Nacida en Beirut, formada en Grasse, Yasmin regresó al Levante tras quince años en el sur de Francia. Trabaja en un pequeño atelier sobre el puerto viejo, siempre con las ventanas abiertas.",
+        "bio_2": "Compone desde la memoria antes que desde la fórmula. La despensa de una abuela, el cedro de un postigo de montaña, un domingo lento en Hamra. Sus perfumes tienen la estructura de un poema libanés: densos, alusivos, generosos en la garganta.",
+        "bio_3": "Cuarenta coleccionistas han llevado su obra en silencio durante más de una década. Nos honra traer tres de sus composiciones, por primera vez, fuera de aquellas paredes."
+      },
+      "belaid": {
+        "name": "Maurice Belaïd",
+        "country": "MA",
+        "roman": "III",
+        "bio_1": "Maurice es el más joven de los tres y el más arquitectónico de los tres. Mitad marroquí, mitad francés, criado entre Marrakech y Lyon, trata cada composición como un edificio: cimientos, notas portantes, ornamento.",
+        "bio_2": "Es fluido en oud — la resina, la madera, el humo — y igualmente fluido en su contención. Una vez nos dijo que la dificultad del oud no está en añadirlo, sino en saber cuándo parar.",
+        "bio_3": "Lo encargamos componer nuestro buque insignia en 2024. La pieza se llama Tariqa. Es, para nosotros, la frase más verdadera que la maison ha escrito hasta ahora."
+      }
+    }
+  },
+  "bespoke": {
+    "title": "BESPOKE",
+    "subtitle": "Una fragancia diseñada sólo para ti.",
+    "intro_1": "Una composición a medida no es un objeto rápido. Comienza con una conversación, a veces dos, a veces tres. Escuchamos lugares, climas, personas, el olor de una habitación concreta en un año concreto.",
+    "intro_2": "Desde ahí, el perfumista trabaja en privado entre seis y doce meses. Recibes muestras, respondes, la fórmula se mueve. Cuando está terminada, recibes entre treinta y cien mililitros en un flacon grabado con tu nombre, y la fórmula sellada en nuestro archivo.",
+    "intro_3": "Aceptamos no más de doce encargos al año. Te invitamos a escribirnos.",
+    "form": {
+      "name": "NOMBRE",
+      "email": "CORREO",
+      "phone": "TELÉFONO (OPCIONAL)",
+      "families": "FAMILIAS PREFERIDAS",
+      "budget": "PRESUPUESTO",
+      "timeline": "PLAZO",
+      "message": "CUÉNTANOS QUÉ TE GUSTARÍA OLER",
+      "submit": "ENVIAR AL ATELIER",
+      "sending": "ENVIANDO…",
+      "families_options": {
+        "floral": "Floral",
+        "amber": "Ámbar",
+        "oud": "Oud",
+        "woody": "Maderas",
+        "chypre": "Chipre",
+        "leather": "Cuero",
+        "aquatic": "Acuático"
+      },
+      "budget_options": {
+        "low": "Menos de 800 €",
+        "mid": "800 – 1 500 €",
+        "high": "1 500 – 3 000 €",
+        "top": "Más de 3 000 €"
+      },
+      "timeline_options": {
+        "q1": "3 meses",
+        "q2": "6 meses",
+        "q3": "12 meses",
+        "none": "Sin prisa"
+      },
+      "errors": {
+        "name": "Comparte tu nombre, por favor.",
+        "email": "Introduce un correo válido.",
+        "phone": "Ese teléfono no parece correcto.",
+        "families": "Elige al menos una familia olfativa.",
+        "budget": "Selecciona un rango de presupuesto.",
+        "timeline": "Selecciona un plazo.",
+        "message": "Unas pocas palabras, al menos.",
+        "generic": "Algo ha fallado. Inténtalo de nuevo."
+      }
+    },
+    "success": "Gracias. Tu referencia de atelier es {ref}. Respondemos en un plazo de 7 días.",
+    "process": {
+      "title": "LOS TRES TIEMPOS",
+      "step_1_label": "I",
+      "step_1_title": "CONSULTA",
+      "step_1_body": "Una conversación larga. Escuchamos el clima, las personas, las habitaciones que quieres conservar.",
+      "step_2_label": "II",
+      "step_2_title": "COMPOSICIÓN",
+      "step_2_body": "De seis a doce meses de trabajo en privado. Las muestras viajan entre tú y el perfumista hasta que la fórmula se asienta.",
+      "step_3_label": "III",
+      "step_3_title": "FLACONNAGE",
+      "step_3_body": "Tu flacon, grabado a mano, en treinta o cien mililitros. La fórmula sellada bajo tu nombre en nuestro archivo."
+    }
+  },
+  "boutique": {
+    "title": "BOUTIQUE · DUBÁI",
+    "subtitle": "City Walk · Edificio 4 · Planta Baja.",
+    "intro": "Nuestra boutique principal se encuentra en el extremo silencioso de City Walk, entre una pequeña librería y un cine. La sala está en penumbra, las estanterías son de cedro, y siempre hay un perfumista o un aprendiz para acompañarte por la colección.",
+    "address_label": "DIRECCIÓN",
+    "address": "City Walk, Edificio 4, Planta Baja · Dubái, Emiratos Árabes Unidos",
+    "hours_label": "HORARIO",
+    "hours": "Abierto a diario · 10:00 – 22:00 GST",
+    "phone_label": "TELÉFONO",
+    "phone": "+971 4 000 0000",
+    "email_label": "CORREO",
+    "email": "boutique@perfumesdubai.com",
+    "map_caption": "Marcador · City Walk, Dubái",
+    "what_title": "QUÉ ESPERAR",
+    "what": {
+      "consultation": {
+        "title": "CONSULTA PRIVADA",
+        "body": "Cuarenta y cinco minutos con un perfumista, con cita o sin ella, en una sala discreta tras la planta principal."
+      },
+      "discovery": {
+        "title": "LA COLECCIÓN COMPLETA",
+        "body": "Toda referencia activa, incluidas las ediciones que no llegan a la web, en estanterías de cedro a temperatura ambiente."
+      },
+      "journey": {
+        "title": "VIAJE POR FAMILIAS",
+        "body": "Recorremos las siete familias en el orden que conviene a tu química, no a la nuestra."
+      },
+      "samples": {
+        "title": "MUESTRAS A MEDIDA",
+        "body": "Entre tres y cinco muestras a tu elección, decantadas a mano en nuestros viales de vidrio, para vivir con ellas una semana antes de decidir."
+      }
+    },
+    "cta": "RESERVAR TU VISITA →"
+  },
+  "journal": {
+    "title": "El Journal llega este invierno.",
+    "body_1": "Una publicación editorial, tres veces al año. Entrevistas con los perfumistas a los que confiamos. Ensayos breves sobre materias primas, ciudades, la extraña historia de por qué llevamos perfume.",
+    "body_2": "Suscríbete abajo, en silencio. Te escribiremos cuando el primer número esté encuadernado, no antes.",
+    "arabic_aside": "نشرتنا قادمة",
+    "newsletter_cta": "Suscribirme al Journal"
+  },
+  "concierge": {
+    "title": "CONCIERGE",
+    "subtitle": "Línea directa con el atelier.",
+    "intro": "Para pedidos privados, consejo olfativo o reservar una visita a la boutique. Respondemos, en persona, en menos de veinticuatro horas, de lunes a sábado.",
+    "form": {
+      "name": "NOMBRE",
+      "email": "CORREO",
+      "subject": "ASUNTO",
+      "message": "MENSAJE",
+      "submit": "ENVIAR",
+      "sending": "ENVIANDO…",
+      "subject_boutique": "Visita a la boutique",
+      "errors": {
+        "name": "Comparte tu nombre, por favor.",
+        "email": "Introduce un correo válido.",
+        "subject": "Añade un asunto breve.",
+        "message": "Unas pocas palabras, al menos.",
+        "generic": "Algo ha fallado. Inténtalo de nuevo."
+      }
+    },
+    "success": "Gracias. Tu referencia es {ref}. Te escribiremos en menos de veinticuatro horas.",
+    "channels": {
+      "title": "OTROS CANALES",
+      "email_label": "CORREO",
+      "email": "concierge@perfumesdubai.com",
+      "whatsapp_label": "WHATSAPP",
+      "whatsapp": "+971 4 000 0000",
+      "response_label": "TIEMPO DE RESPUESTA",
+      "response": "Menos de 24 h · Lunes a sábado"
+    }
+  },
+  "legal": {
+    "last_updated": "Última actualización · MMXXVI · Enero",
+    "privacy": {
+      "title": "PRIVACIDAD",
+      "intro": "Perfumes Dubai S.L. — sociedad inscrita en España con boutique operativa en Dubái — se compromete a proteger tus datos personales con la misma paciencia con la que componemos nuestras fragancias. Esta política describe qué recogemos, por qué y cómo puedes ejercer tus derechos.",
+      "sections": {
+        "s1_title": "I. DATOS QUE RECOGEMOS",
+        "s1_body": "Recogemos sólo lo necesario: tu nombre, correo, teléfono (si lo compartes), dirección de envío si pides y los mensajes que nos haces llegar por los formularios. No compramos datos a terceros y no enriquecemos tu perfil con fuentes externas.",
+        "s2_title": "II. BASE LEGAL",
+        "s2_body": "Artículo 6.1.b RGPD (ejecución de un contrato) para pedidos y encargos a medida. Artículo 6.1.a (consentimiento) para la newsletter. Artículo 6.1.f (interés legítimo) para la prevención del fraude y la mejora del servicio.",
+        "s3_title": "III. CONSERVACIÓN",
+        "s3_body": "Los datos de pedido se conservan diez años por obligaciones contables españolas. Los datos de la newsletter, hasta que te des de baja. El archivo de los encargos a medida se conserva indefinidamente, a petición del cliente, ya que la fórmula le pertenece.",
+        "s4_title": "IV. TRANSFERENCIA INTERNACIONAL",
+        "s4_body": "La operativa de la boutique en los Emiratos Árabes Unidos puede exigir transferencias limitadas de tus datos fuera del Espacio Económico Europeo. Estas transferencias se rigen por las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea.",
+        "s5_title": "V. TUS DERECHOS",
+        "s5_body": "Puedes acceder, rectificar, suprimir, portar o limitar el tratamiento de tus datos en cualquier momento. También puedes retirar el consentimiento de la newsletter con un solo clic. Para ejercer estos derechos, escribe a privacy@perfumesdubai.com.",
+        "s6_title": "VI. CONTACTO",
+        "s6_body": "Delegado de Protección de Datos · privacy@perfumesdubai.com. También puedes presentar reclamación ante la Agencia Española de Protección de Datos (AEPD)."
+      }
+    },
+    "terms": {
+      "title": "TÉRMINOS",
+      "intro": "Al usar este sitio o comprar a Perfumes Dubai, aceptas los términos siguientes. Los hemos escrito en lenguaje claro, pero siguen siendo legalmente vinculantes.",
+      "sections": {
+        "s1_title": "I. ACEPTACIÓN",
+        "s1_body": "Tu visita, registro o compra constituye aceptación de los términos vigentes en la fecha de tu acción.",
+        "s2_title": "II. PROPIEDAD INTELECTUAL",
+        "s2_body": "Toda imagen, texto, fórmula, nombre e identidad visual de este sitio es propiedad de Perfumes Dubai S.L. o de sus perfumistas. No se permite reproducción alguna sin consentimiento escrito previo.",
+        "s3_title": "III. PRODUCTOS",
+        "s3_body": "Nuestros perfumes se elaboran en pequeñas series y pueden variar ligeramente entre frascos. Es la naturaleza de las materias naturales y forma parte del objeto. Las listas de alérgenos acompañan a cada pedido.",
+        "s4_title": "IV. PRECIOS",
+        "s4_body": "Los precios se muestran en EUR, USD o AED según tu selección. Impuestos y envío se calculan al pagar. Nos reservamos el derecho a modificar precios en cualquier momento.",
+        "s5_title": "V. DEVOLUCIONES",
+        "s5_body": "Por normativa europea y de los EAU, los perfumes abiertos no admiten devolución. Los frascos precintados pueden devolverse en un plazo de catorce días desde su recepción, en su embalaje original y a cargo del comprador.",
+        "s6_title": "VI. JURISDICCIÓN",
+        "s6_body": "Los tribunales de Madrid son competentes para clientes de la Unión Europea. Para clientes de los EAU, las disputas se resuelven mediante arbitraje en el Dubai International Arbitration Centre (DIAC) conforme al derecho de los Emiratos."
+      }
+    },
+    "cookies": {
+      "title": "COOKIES",
+      "intro": "Usamos el número mínimo de cookies que permite funcionar a este sitio. No te seguimos por la web abierta.",
+      "sections": {
+        "s1_title": "I. ESENCIALES",
+        "s1_body": "Cookie de sesión, preferencia de idioma, selección de moneda, contenido del carrito. Son necesarias para que el sitio funcione y no pueden desactivarse.",
+        "s2_title": "II. RENDIMIENTO",
+        "s2_body": "Información de tráfico agregada y anónima mediante Vercel Analytics. No se almacena ningún identificador personal.",
+        "s3_title": "III. MARKETING",
+        "s3_body": "Ninguna, por defecto. Si en algún momento las incorporamos, solicitaremos tu consentimiento expreso mediante un banner antes de instalarlas.",
+        "s4_title": "IV. PREFERENCIAS",
+        "s4_body": "Puedes restablecer tus preferencias eliminando la clave pd-cookies-ack del almacenamiento de tu navegador; el banner reaparecerá en tu próxima visita."
+      }
+    }
   }
 }
