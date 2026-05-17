@@ -23,12 +23,18 @@
     "hero": {
       "eyebrow": "EST. DUBAI · MMXXVI · MAISON DE PARFUM",
       "title": "The art of fragrance, distilled from desert and time.",
-      "subtitle": "Each essence, a memory. Each flacon, a horizon.",
+      "title_line1": "THE ART /",
+      "title_line2": "OF FRAGRANCE",
+      "subtitle": "Crafted in the desert. Worn in every world.",
       "cta": "ENTER THE ATELIER →"
     },
     "links": {
       "styleguide": "View design system →"
     }
+  },
+  "audio": {
+    "toggle_on": "Sound on",
+    "toggle_off": "Sound off"
   },
   "manifesto": {
     "phrases": {
