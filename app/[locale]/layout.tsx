@@ -23,6 +23,7 @@ import {
   organizationSchema,
   websiteSchema,
 } from "@/lib/seo/structured-data";
+import { GlobalErrorCapture } from "@/components/diagnostics/GlobalErrorCapture";
 import "../globals.css";
 
 type LocaleParams = { locale: string };
@@ -124,14 +125,18 @@ export default async function LocaleLayout({
           {tA11y("skip_to_content")}
         </a>
 
-        {/* Organisation + WebSite structured data, present on every page. */}
-        <JsonLd id="ld-org" data={organizationSchema()} />
-        <JsonLd id="ld-website" data={websiteSchema(typedLocale)} />
+        {/* Organisation + WebSite structured data — temporarily disabled while
+            we isolate the React 19 HostHoistable removeChild crash. JSON-LD
+            scripts are hoisted to <head> by the reconciler and seem to be the
+            element type that loses its parent ref on certain re-renders. */}
+        {/* <JsonLd id="ld-org" data={organizationSchema()} /> */}
+        {/* <JsonLd id="ld-website" data={websiteSchema(typedLocale)} /> */}
 
         {/* Preloader is mounted OUTSIDE of <LenisProvider> and before the
             i18n client provider so it appears on the very first paint, before
             Lenis can take over scroll. It receives copy as plain props from a
             server wrapper, so it does not depend on client hydration. */}
+        <GlobalErrorCapture />
         <PreloaderMount locale={locale} />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <LenisProvider>
