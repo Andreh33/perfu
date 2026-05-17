@@ -206,6 +206,10 @@ body {
   height: 0;
 }
 
+/* TODO Fase 3: enable global grain overlay once /public/textures/grain-fine.png
+   is replaced by a real 256x256 noise texture (currently a 1x1 transparent
+   placeholder). Apply via body::after with mix-blend-mode: overlay; opacity: .04. */
+
 @media (pointer: fine) {
   body.has-custom-cursor,
   body.has-custom-cursor * {

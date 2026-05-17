@@ -10,8 +10,9 @@ export const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
+  // axes can only be set when the font is requested as a variable font
+  // (i.e. no fixed weight array). Fraunces is variable across 100..900.
   axes: ["opsz", "SOFT"],
-  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
 });
 
