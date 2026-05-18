@@ -1,15 +1,11 @@
-// Hero — minimalist centred composition over a liquid-gold animated
-// background. Inspired by the QASR / Oud Royale editorial style: tiny
-// ultra-tracked eyebrow, single bold extralight serif word, hairline
-// gold divider, italic micro-tagline. Reads as the cover of a private
-// edition rather than a marketing landing.
-//
-// Server Component — i18n strings resolved at request time. The animated
-// background and the entrance choreography live in Hero.client.tsx.
+// Hero — minimalist centred QASR-style composition. The animated liquid
+// gold background is now mounted GLOBALLY in the layout root
+// (<GlobalLiquidGoldBackground/>) so it covers every page; the Hero just
+// reserves a 100svh viewport and centres the editorial type overlay on
+// top of the global atmosphere.
 
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { LiquidGoldBackground } from "@/components/LiquidGoldBackground";
 
 interface HeroProps {
   locale: string;
@@ -20,9 +16,6 @@ export async function Hero({ locale }: HeroProps) {
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const isRtl = locale === "ar";
 
-  // Brand wordmark in two forms — Latin for ES/EN, Arabic for AR. The
-  // centred display piece is the maison's name, treated as the editorial
-  // hero (cf. "QASR" in the source reference).
   const wordmark = isRtl ? "عطور دبي" : "PERFUMES";
   const wordmarkSub = isRtl ? "" : "DUBAI";
 
@@ -32,7 +25,7 @@ export async function Hero({ locale }: HeroProps) {
       data-section="hero"
       className="relative w-full h-[100svh] min-h-[640px] overflow-hidden"
     >
-      <LiquidGoldBackground intensity="opulent" className="h-full w-full">
+      <div className="relative h-full w-full">
         <div className="absolute inset-0 grid place-items-center text-center px-[var(--space-5)]">
           <div className="flex flex-col items-center">
             {/* Eyebrow — ultra-thin tracking, ivory at 40% opacity */}
@@ -140,7 +133,7 @@ export async function Hero({ locale }: HeroProps) {
             </p>
           </div>
         </div>
-      </LiquidGoldBackground>
+      </div>
     </section>
   );
 }
