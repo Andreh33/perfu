@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "./Reveal";
+import { ParallaxImage } from "./ParallaxImage";
 
 interface Props {
   locale: string;
@@ -23,21 +24,19 @@ export async function MaisonTeaser({ locale }: Props) {
     >
       <div className="mx-auto max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-8)] md:gap-[var(--space-10)] items-center">
         <Reveal>
-          <div
-            className="group/img relative overflow-hidden"
-            style={{
-              aspectRatio: "4 / 5",
-              border: "1px solid rgba(212, 175, 55, 0.12)",
-            }}
+          <ParallaxImage
+            strength={80}
+            className="border border-[#d4af37]/[0.12]"
           >
-            <Image
-              src="https://images.unsplash.com/photo-1582106245687-cbb466a9f07f?w=1200&q=85&fit=crop"
-              alt={t("image_alt")}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-[var(--duration-cinematic)] ease-[var(--ease-silk)] group-hover/img:scale-[1.05]"
-              style={{ filter: "saturate(0.85) brightness(0.8)" }}
-            />
+            <div style={{ aspectRatio: "4 / 5", position: "relative" }}>
+              <Image
+                src="https://images.unsplash.com/photo-1582106245687-cbb466a9f07f?w=1200&q=85&fit=crop"
+                alt={t("image_alt")}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                style={{ filter: "saturate(0.85) brightness(0.8)" }}
+              />
             <div
               aria-hidden
               className="absolute inset-0"
@@ -68,7 +67,8 @@ export async function MaisonTeaser({ locale }: Props) {
             >
               II
             </span>
-          </div>
+            </div>
+          </ParallaxImage>
         </Reveal>
 
         <Reveal delay={180}>

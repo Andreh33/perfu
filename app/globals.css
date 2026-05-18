@@ -675,6 +675,29 @@ footer {
   }
 }
 
+/* Hero wordmark — each letter lifts + brightens on hover with a
+   stagger that follows the cursor across the word. */
+.hero-wordmark {
+  display: inline-block;
+}
+.hero-letter {
+  display: inline-block;
+  transition:
+    transform 460ms var(--ease-soft-expo),
+    color 460ms var(--ease-soft-expo),
+    text-shadow 460ms var(--ease-soft-expo);
+  will-change: transform, color;
+}
+.hero-wordmark:hover .hero-letter {
+  transform: translateY(-6px);
+  color: #f4e4bc;
+  text-shadow: 0 8px 32px rgba(244, 228, 188, 0.45);
+}
+.hero-letter:hover {
+  transform: translateY(-14px) !important;
+  color: #ffffff !important;
+}
+
 /* Hero scroll indicator — a vertical hairline gold with a "falling dot"
    that travels from top to bottom on a 2.4 s loop. */
 .hero-scroll-line {

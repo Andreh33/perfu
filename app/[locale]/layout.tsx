@@ -16,7 +16,8 @@ import { CookieBanner } from "@/components/layout/CookieBanner";
 import { CartSheet } from "@/components/cart/CartSheet";
 import { PreloaderMount } from "./preloader-mount";
 import { RouteCurtain } from "@/components/layout/RouteCurtain";
-import { PatienceToast } from "@/components/easter/PatienceToast";
+// PatienceToast removed — user feedback: 'feo'.
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getSiteUrl,
@@ -155,7 +156,7 @@ export default async function LocaleLayout({
             <Footer locale={locale} />
             <CartSheet />
             <CookieBanner />
-            <PatienceToast />
+            <ScrollProgress />
           </LenisProvider>
         </NextIntlClientProvider>
       </body>

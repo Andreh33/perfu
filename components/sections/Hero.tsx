@@ -5,6 +5,7 @@
 
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+import { HeroWordmark } from "./HeroWordmark";
 
 interface HeroProps {
   locale: string;
@@ -38,8 +39,8 @@ export async function Hero({ locale }: HeroProps) {
             {t("eyebrow")}
           </p>
 
-          {/* Massive wordmark — Aboreto font (Arabic-calligraphy
-              influenced Latin display) for ES/EN, Naskh display for AR. */}
+          {/* Wordmark with per-letter hover lift. Aboreto for Latin,
+              Naskh for Arabic. */}
           <h1
             className={isRtl ? "font-arabic-display" : ""}
             style={{
@@ -52,7 +53,11 @@ export async function Hero({ locale }: HeroProps) {
               textShadow: "0 0 80px rgba(244, 228, 188, 0.18)",
             }}
           >
-            {wordmark}
+            {isRtl ? (
+              wordmark
+            ) : (
+              <HeroWordmark text={wordmark} ariaLabel={wordmark} />
+            )}
           </h1>
           {wordmarkSub && (
             <h2
@@ -67,7 +72,7 @@ export async function Hero({ locale }: HeroProps) {
                 textShadow: "0 0 80px rgba(244, 228, 188, 0.18)",
               }}
             >
-              {wordmarkSub}
+              <HeroWordmark text={wordmarkSub} ariaLabel={wordmarkSub} />
             </h2>
           )}
 
