@@ -1,25 +1,25 @@
 "use client";
-// Global liquid-gold background — full rebuild.
+// Global liquid-gold background — METABALLS approach.
 //
-// Prior attempts used feTurbulence + heavy gaussian blur. The user could
-// not perceive motion because the blur (40 px on the mesh, 180 px on the
-// orbs) averaged out every frame. SMIL animations were running but the
-// eye had no edges to track.
+// Prior attempt (rotating conic gradients) read as "sun rotating" not
+// liquid. True liquid motion needs SURFACE TENSION + MERGING — blobs that
+// approach each other, fuse, then separate. The classic technique is the
+// "goo filter": Gaussian blur softens the blob edges, a feColorMatrix
+// contrast threshold then sharpens them again into a single merged
+// silhouette. The result is mercury-like fluid.
 //
-// New approach: TWO large conic gradients that ROTATE in opposite
-// directions on a long cycle. Conic rotation is a continuous, perceivable
-// motion — the gold visibly swirls. Plus three medium-blur orbs with
-// real silhouettes drifting across the viewport. No turbulence filter,
-// no SMIL, no heavy mesh blur. The motion is now obvious.
+// We animate eight gold circles via SMIL <animate>, each on its own
+// path/duration. The goo filter merges them where they overlap, producing
+// continuously morphing organic blobs that genuinely read as liquid gold.
 
 interface Props {
   intensity?: "subtle" | "balanced" | "opulent";
 }
 
 const STRENGTH = {
-  subtle:   { opacity: 0.55, orbOpacity: 0.6,  conicDur: 60 },
-  balanced: { opacity: 0.75, orbOpacity: 0.8,  conicDur: 45 },
-  opulent:  { opacity: 0.95, orbOpacity: 0.95, conicDur: 36 },
+  subtle:   { ballOpacity: 0.7, ambient: 0.4 },
+  balanced: { ballOpacity: 0.85, ambient: 0.6 },
+  opulent:  { ballOpacity: 1.0, ambient: 0.75 },
 } as const;
 
 export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}) {
@@ -30,130 +30,195 @@ export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}
       aria-hidden
       className="pointer-events-none fixed inset-0 z-[1] overflow-hidden"
       data-global-bg
+      style={{ background: "#0b0805" }}
     >
-      {/* Base — deep cocoa, single uniform colour. No radial dimming. */}
+      {/* Ambient warm wash so the metaballs sit on a glowing canvas, not
+          flat dark. */}
       <div
         className="absolute inset-0"
-        style={{ background: "#0b0805" }}
-      />
-
-      {/* CONIC LAYER A — large rotating sweep of warm gold. Rotation
-          is continuous and perceptible. Massively over-sized (200vmax)
-          so the centre of rotation is off-screen and we always see a
-          fresh slice. */}
-      <div
-        className="absolute"
         style={{
-          top: "50%",
-          left: "50%",
-          width: "200vmax",
-          height: "200vmax",
-          marginLeft: "-100vmax",
-          marginTop: "-100vmax",
-          opacity: s.opacity,
+          opacity: s.ambient,
           background:
-            "conic-gradient(from 0deg at 50% 50%, " +
-            "transparent 0deg, " +
-            "rgba(244, 207, 113, 0.55) 40deg, " +
-            "rgba(212, 175, 55, 0.85) 90deg, " +
-            "rgba(244, 207, 113, 0.45) 140deg, " +
-            "rgba(140, 95, 35, 0.2) 200deg, " +
-            "transparent 250deg, " +
-            "rgba(184, 134, 50, 0.6) 310deg, " +
-            "transparent 360deg)",
-          filter: "blur(40px)",
-          animation: `lgb-rotate ${s.conicDur}s linear infinite`,
-          willChange: "transform",
+            "radial-gradient(ellipse 120% 80% at 50% 50%, rgba(184, 134, 50, 0.35) 0%, rgba(120, 80, 30, 0.18) 45%, transparent 90%)",
         }}
       />
 
-      {/* CONIC LAYER B — counter-rotating gold/amber/rose, blends with A
-          via mix-blend overlay. Two opposite-rotating conics give the
-          illusion of a turbulent surface. */}
-      <div
-        className="absolute"
-        style={{
-          top: "50%",
-          left: "50%",
-          width: "200vmax",
-          height: "200vmax",
-          marginLeft: "-100vmax",
-          marginTop: "-100vmax",
-          opacity: s.opacity * 0.85,
-          mixBlendMode: "overlay",
-          background:
-            "conic-gradient(from 180deg at 50% 50%, " +
-            "transparent 0deg, " +
-            "rgba(244, 228, 188, 0.5) 60deg, " +
-            "rgba(201, 146, 138, 0.3) 120deg, " +
-            "transparent 180deg, " +
-            "rgba(212, 175, 55, 0.55) 240deg, " +
-            "rgba(244, 207, 113, 0.4) 300deg, " +
-            "transparent 360deg)",
-          filter: "blur(50px)",
-          animation: `lgb-rotate-reverse ${s.conicDur * 1.4}s linear infinite`,
-          willChange: "transform",
-        }}
-      />
-
-      {/* Drifting orbs — moderate blur (sharp enough to be seen moving). */}
-      <div
-        className="absolute inset-0"
-        style={{ opacity: s.orbOpacity, mixBlendMode: "screen" }}
+      {/* THE LIQUID. Full-viewport SVG with the goo filter and eight
+          gold circles whose centres animate along independent paths.
+          Where two circles overlap, the goo filter merges them into a
+          single blob — the visual is continuously morphing gold mercury. */}
+      <svg
+        className="absolute inset-0 h-full w-full"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1000 700"
+        style={{ opacity: s.ballOpacity }}
       >
-        <span
-          style={{
-            position: "absolute",
-            top: "10%",
-            left: "8%",
-            width: "60vmin",
-            height: "60vmin",
-            borderRadius: "50%",
-            filter: "blur(70px)",
-            background:
-              "radial-gradient(circle, rgba(244, 207, 113, 0.85) 0%, rgba(212, 175, 55, 0.4) 35%, transparent 70%)",
-            animation: "lgb-mega-a 22s ease-in-out infinite",
-            willChange: "transform",
-          }}
-        />
-        <span
-          style={{
-            position: "absolute",
-            top: "30%",
-            right: "10%",
-            width: "55vmin",
-            height: "55vmin",
-            borderRadius: "50%",
-            filter: "blur(80px)",
-            background:
-              "radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, rgba(160, 110, 50, 0.35) 40%, transparent 75%)",
-            animation: "lgb-mega-b 28s ease-in-out infinite",
-            willChange: "transform",
-          }}
-        />
-        <span
-          style={{
-            position: "absolute",
-            bottom: "12%",
-            left: "40%",
-            width: "50vmin",
-            height: "50vmin",
-            borderRadius: "50%",
-            filter: "blur(70px)",
-            background:
-              "radial-gradient(circle, rgba(244, 228, 188, 0.55) 0%, rgba(201, 146, 138, 0.25) 45%, transparent 75%)",
-            animation: "lgb-mega-c 25s ease-in-out infinite",
-            willChange: "transform",
-          }}
-        />
-      </div>
+        <defs>
+          {/* The goo filter: blur 30 px, then a colour-matrix that boosts
+              alpha contrast around 0.5 → soft circles merge into hard
+              silhouettes wherever they overlap. */}
+          <filter id="goo" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10"
+              result="goo"
+            />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+          </filter>
 
-      {/* Vignette — very light so the rotating gold reads to the edges. */}
+          {/* A second softer goo — used on a separate layer for sub-blobs
+              that float over the main liquid. */}
+          <filter id="goo-soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 16 -7"
+              result="goo"
+            />
+          </filter>
+
+          <radialGradient id="ball-warm" cx="35%" cy="35%" r="65%">
+            <stop offset="0%" stopColor="#f4e4bc" stopOpacity="1" />
+            <stop offset="50%" stopColor="#d4af37" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#8e6e3f" stopOpacity="0.85" />
+          </radialGradient>
+          <radialGradient id="ball-amber" cx="40%" cy="30%" r="70%">
+            <stop offset="0%" stopColor="#f4d27a" stopOpacity="1" />
+            <stop offset="60%" stopColor="#b8935a" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#5c4628" stopOpacity="0.85" />
+          </radialGradient>
+        </defs>
+
+        {/* MAIN LIQUID GROUP — large merged blobs */}
+        <g filter="url(#goo)">
+          <circle r="180" fill="url(#ball-warm)">
+            <animate
+              attributeName="cx"
+              values="200; 700; 500; 300; 200"
+              dur="22s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate
+              attributeName="cy"
+              values="200; 350; 500; 250; 200"
+              dur="18s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate attributeName="r" values="180; 220; 160; 200; 180" dur="14s" repeatCount="indefinite" />
+          </circle>
+
+          <circle r="160" fill="url(#ball-amber)">
+            <animate
+              attributeName="cx"
+              values="800; 400; 600; 750; 800"
+              dur="24s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate
+              attributeName="cy"
+              values="180; 450; 300; 550; 180"
+              dur="20s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate attributeName="r" values="160; 130; 200; 150; 160" dur="16s" repeatCount="indefinite" />
+          </circle>
+
+          <circle r="140" fill="url(#ball-warm)">
+            <animate
+              attributeName="cx"
+              values="500; 200; 750; 450; 500"
+              dur="26s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate
+              attributeName="cy"
+              values="500; 200; 400; 600; 500"
+              dur="22s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate attributeName="r" values="140; 180; 110; 160; 140" dur="18s" repeatCount="indefinite" />
+          </circle>
+
+          <circle r="120" fill="url(#ball-amber)">
+            <animate
+              attributeName="cx"
+              values="350; 650; 450; 250; 350"
+              dur="20s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate
+              attributeName="cy"
+              values="350; 300; 600; 400; 350"
+              dur="17s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate attributeName="r" values="120; 100; 150; 130; 120" dur="13s" repeatCount="indefinite" />
+          </circle>
+
+          <circle r="100" fill="url(#ball-warm)">
+            <animate
+              attributeName="cx"
+              values="700; 300; 500; 800; 700"
+              dur="19s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate
+              attributeName="cy"
+              values="600; 500; 350; 450; 600"
+              dur="21s"
+              repeatCount="indefinite"
+              calcMode="spline"
+              keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+            />
+            <animate attributeName="r" values="100; 130; 90; 120; 100" dur="15s" repeatCount="indefinite" />
+          </circle>
+        </g>
+
+        {/* SUB-LAYER — smaller satellites that float over the main liquid
+            on the softer goo. */}
+        <g filter="url(#goo-soft)" opacity="0.6">
+          <circle r="70" fill="url(#ball-amber)">
+            <animate attributeName="cx" values="600; 200; 800; 400; 600" dur="15s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="100; 600; 450; 250; 100" dur="17s" repeatCount="indefinite" />
+          </circle>
+          <circle r="60" fill="url(#ball-warm)">
+            <animate attributeName="cx" values="900; 100; 500; 700; 900" dur="18s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="400; 350; 100; 550; 400" dur="14s" repeatCount="indefinite" />
+          </circle>
+          <circle r="55" fill="url(#ball-amber)">
+            <animate attributeName="cx" values="150; 850; 350; 550; 150" dur="16s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="550; 150; 650; 300; 550" dur="19s" repeatCount="indefinite" />
+          </circle>
+        </g>
+      </svg>
+
+      {/* Very light vignette so the edges fade. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 130% 95% at 50% 50%, transparent 75%, rgba(0, 0, 0, 0.25) 100%)",
+            "radial-gradient(ellipse 130% 95% at 50% 50%, transparent 70%, rgba(0, 0, 0, 0.3) 100%)",
         }}
       />
 
