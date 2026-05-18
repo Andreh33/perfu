@@ -35,27 +35,38 @@ export function CookieBanner() {
           exit={{ clipPath: "inset(0 0 100% 0)", y: 12, opacity: 0 }}
           transition={{ duration: 0.48, ease: [0.16, 1, 0.3, 1] }}
           className={cn(
-            "fixed bottom-[var(--space-5)] left-[var(--space-5)] z-[90]",
-            "max-w-[380px] border border-[var(--ink-500)] bg-[var(--obsidian-200)]",
-            "px-[var(--space-4)] py-[var(--space-4)]",
+            "fixed bottom-[var(--space-4)] left-[var(--space-4)] right-[var(--space-4)] z-[90]",
+            "flex flex-col gap-[var(--space-3)] sm:flex-row sm:items-center sm:justify-between sm:gap-[var(--space-5)]",
+            "sm:right-auto sm:max-w-[420px]",
+            "border border-[var(--ink-500)] bg-[var(--obsidian-200)]/95 backdrop-blur",
+            "px-[var(--space-4)] py-[var(--space-3)]",
             "text-[var(--ink-200)] shadow-none",
           )}
         >
-          <p className="font-body text-[var(--text-sm)] leading-[1.55]">
+          <p className="font-body text-[12px] leading-[1.45] flex-1">
             {t("body")}
           </p>
-          <div className="mt-[var(--space-3)]">
+          <div className="flex items-center gap-[var(--space-4)] shrink-0">
             <button
               type="button"
               onClick={dismiss}
               className={cn(
-                "font-body text-xs font-medium uppercase tracking-[0.16em]",
-                "text-[var(--ink-100)] hover:text-[var(--gold-100)]",
-                "transition-colors duration-[var(--duration-quick)]",
-                "border-b border-[var(--ink-400)] hover:border-[var(--gold-200)] pb-1",
+                "font-body text-[10px] font-medium uppercase tracking-[0.18em]",
+                "text-[var(--gold-200)] hover:text-[var(--gold-100)]",
+                "transition-colors duration-[var(--duration-quick)] whitespace-nowrap",
               )}
             >
               {t("persist")}
+            </button>
+            <button
+              type="button"
+              onClick={dismiss}
+              aria-label="Dismiss"
+              className="text-[var(--ink-300)] hover:text-[var(--ink-100)] transition-colors"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                <path d="M2 2 L12 12 M12 2 L2 12" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+              </svg>
             </button>
           </div>
         </motion.aside>

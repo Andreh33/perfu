@@ -38,28 +38,33 @@ export async function Hero({ locale }: HeroProps) {
             {t("eyebrow")}
           </p>
 
-          {/* Massive wordmark */}
+          {/* Massive wordmark — Aboreto font (Arabic-calligraphy
+              influenced Latin display) for ES/EN, Naskh display for AR. */}
           <h1
-            className={`font-display font-extralight leading-[0.9] ${isRtl ? "font-arabic-display" : ""}`}
+            className={isRtl ? "font-arabic-display" : ""}
             style={{
-              fontSize: "clamp(4rem, 13vw, 11rem)",
-              letterSpacing: isRtl ? "0" : "0.22em",
-              fontWeight: 200,
+              fontFamily: isRtl ? undefined : "var(--font-wordmark)",
+              fontSize: "clamp(3rem, 11vw, 9.5rem)",
+              letterSpacing: isRtl ? "0" : "0.16em",
+              fontWeight: 400,
+              lineHeight: 0.95,
               color: "#f4e4bc",
-              textShadow: "0 0 80px rgba(244, 228, 188, 0.2)",
+              textShadow: "0 0 80px rgba(244, 228, 188, 0.18)",
             }}
           >
             {wordmark}
           </h1>
           {wordmarkSub && (
             <h2
-              className="font-display font-extralight leading-[0.9] mt-[var(--space-2)] md:mt-[var(--space-3)]"
+              className="mt-[var(--space-2)] md:mt-[var(--space-3)]"
               style={{
-                fontSize: "clamp(4rem, 13vw, 11rem)",
-                letterSpacing: "0.22em",
-                fontWeight: 200,
+                fontFamily: "var(--font-wordmark)",
+                fontSize: "clamp(3rem, 11vw, 9.5rem)",
+                letterSpacing: "0.16em",
+                fontWeight: 400,
+                lineHeight: 0.95,
                 color: "#f4e4bc",
-                textShadow: "0 0 80px rgba(244, 228, 188, 0.2)",
+                textShadow: "0 0 80px rgba(244, 228, 188, 0.18)",
               }}
             >
               {wordmarkSub}
