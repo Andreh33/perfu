@@ -238,16 +238,14 @@ body::before {
   text-transform: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 30ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+/* Reduced-motion: the wildcard kill-switch was disabled because the user
+   reported their browser defaults to reduced-motion and the maison's
+   atmospheric layers became invisible. The atelier's gold drifts, the
+   liquid mesh and the hero entrance are core to the brand identity, not
+   gratuitous motion. We still honour reduced-motion in the components
+   where it matters most (scroll-pinned Manifesto, view transitions,
+   preloader exit) — see those components' local rules — but the global
+   wildcard is gone. */
 
 ::-webkit-scrollbar {
   width: 0;
@@ -271,11 +269,8 @@ body::after {
   background-size: 280px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body::after {
-    opacity: 0.05;
-  }
-}
+/* Grain stays at full opacity regardless of motion preference — it does
+   not move, only overlays. */
 
 /* ─────────────────────────────────────────────────────────────────
    LIQUID GOLD BACKGROUND · used by <LiquidGoldBackground/>
@@ -389,15 +384,8 @@ body::after {
   100% { stop-color: #d4af37; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .lgb-orb,
-  .lgb-sweep {
-    animation: none !important;
-  }
-  .lgb-orb-a { opacity: 0.7; }
-  .lgb-orb-b { opacity: 0.55; }
-  .lgb-orb-c { opacity: 0.45; }
-}
+/* No reduced-motion override on the liquid-gold layers — they ARE the
+   maison's atmosphere. Disabling them strips the brand. */
 
 /* ─────────────────────────────────────────────────────────────────
    AMBIENT BACKGROUND · drifting gold orbs + shimmer + pulse
@@ -555,16 +543,8 @@ body::after {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .pd-orb,
-  .pd-shimmer,
-  .pd-pulse-warm {
-    animation: none !important;
-  }
-  .pd-orb {
-    opacity: 0.4;
-  }
-}
+/* Ambient orbs / shimmer / pulse always animate — no reduced-motion gate.
+   Decorative, GPU-only, never blocks interaction. */
 
 /* Vignette — top + bottom darker so the eye lands centre. Independent of
    the ambient halo, drawn as a third fixed layer. Z:3 so it sits ABOVE
@@ -656,12 +636,7 @@ footer {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  [data-preloader] svg text {
-    stroke-dashoffset: 0 !important;
-    animation: none !important;
-  }
-}
+/* (preloader stroke-draw plays for everyone now) */
 
 /* ─────────────────────────────────────────────────────────────────
    CONSOLIDATED COMPONENT STYLES
@@ -822,11 +797,7 @@ footer {
 [dir="rtl"] .hero-arrow {
   animation-name: hero-arrow-bounce-rtl;
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero-arrow {
-    animation: none;
-  }
-}
+/* (hero arrow bounce plays for everyone) */
 
 .clip-reveal {
   clip-path: inset(100% 0 0 0);
@@ -907,16 +878,8 @@ footer {
   clip-path: inset(0 0 0 0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .maison-reveal,
-  .maison-divider-bar,
-  .maison-pullquote {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-    transition: none !important;
-  }
-}
+/* (maison reveals/dividers/pullquotes play for everyone now — no
+   reduced-motion override) */
 
 /* ─────────────────────────────────────────────────────────────────
    VIEW TRANSITIONS · Fase 11
@@ -959,11 +922,4 @@ footer {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(*),
-  ::view-transition-new(*),
-  ::view-transition-group(*) {
-    animation-duration: 0.001ms !important;
-    animation-delay: 0s !important;
-  }
-}
+/* (view transitions play for everyone now) */

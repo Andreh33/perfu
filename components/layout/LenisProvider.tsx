@@ -13,12 +13,8 @@ interface LenisProviderProps {
 
 export function LenisProvider({ children }: LenisProviderProps) {
   useEffect(() => {
-    // Honour user motion preferences — no smooth scroll if reduce is set.
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      return;
-    }
-
+    // (reduced-motion gate disabled — user reported their browser defaults
+    //  to reduced and the smooth scroll became invisible)
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

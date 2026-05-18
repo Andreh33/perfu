@@ -99,9 +99,8 @@ export function Preloader({ copy }: PreloaderProps) {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    reducedMotionRef.current = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    // reducedMotion check disabled — always run full choreography.
+    reducedMotionRef.current = false;
 
     startRef.current = performance.now();
 

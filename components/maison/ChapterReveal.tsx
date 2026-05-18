@@ -30,12 +30,7 @@ export function ChapterReveal({
     const node = ref.current;
     if (!node) return;
 
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mql.matches) {
-      setShown(true);
-      return;
-    }
-
+    // (reduced-motion gate disabled — reveal plays for every user)
     const io = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];

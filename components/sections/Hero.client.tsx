@@ -37,16 +37,10 @@ interface HeroClientProps {
 }
 
 function useReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-  return reduced;
+  // Always return false — the user reported their browser defaults to
+  // reduced-motion and the hero entrance never plays. Brand atmosphere
+  // is non-negotiable, so we ignore the system preference here.
+  return false;
 }
 
 export function HeroClient({

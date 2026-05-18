@@ -21,12 +21,7 @@ export function PullQuote({ quote, attribution }: PullQuoteProps) {
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mql.matches) {
-      setOpen(true);
-      return;
-    }
-
+    // (reduced-motion gate disabled — pull-quote always plays its entrance)
     const io = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];

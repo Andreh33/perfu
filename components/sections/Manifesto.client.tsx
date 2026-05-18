@@ -46,16 +46,8 @@ function splitWords(text: string): ReactNode[] {
 }
 
 function useReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-  return reduced;
+  // Always returns false — see comment in Hero.client.tsx and globals.css.
+  return false;
 }
 
 // Static SVG drop used in reduced-motion mode.
