@@ -51,6 +51,44 @@
     },
     "links": {
       "styleguide": "Ver sistema de diseño →"
+    },
+    "featured": {
+      "eyebrow": "FRAGANCIAS DESTACADAS",
+      "title": "Tres composiciones por las que vale la pena demorarse.",
+      "subtitle": "Seleccionadas por el perfumista esta temporada. Cada una a su temperatura.",
+      "from": "DESDE",
+      "explore": "EXPLORAR",
+      "see_all": "VER LAS VEINTE"
+    },
+    "stats": {
+      "eyebrow": "POR LOS NÚMEROS",
+      "title": "Un atelier de paciencia.",
+      "fragrances": "FRAGANCIAS",
+      "perfumers": "PERFUMISTAS",
+      "months_suffix": "M",
+      "months_label": "POR ESENCIA",
+      "cities": "CIUDADES"
+    },
+    "maison_teaser": {
+      "eyebrow": "LA MAISON",
+      "title": "El fuego no transforma la rosa; sólo la convence de recordarse a sí misma.",
+      "body_1": "Componemos en aceites, en silencio, hasta la última semana. Ocho perfumistas, tres talleres, doce encargos al año. No más.",
+      "body_2": "Desde la cosecha matinal en Grasse hasta el frasco sellado con cera, cada esencia tarda entre catorce y veinticuatro meses. Nunca lanzamos contra una fecha.",
+      "cta": "LEER LAS CARTAS",
+      "image_alt": "Alambique de cobre antiguo en el taller de la maison."
+    },
+    "pull_quote": {
+      "quote": "La paciencia no es una virtud en nuestra bodega. Es el único material disponible.",
+      "attribution": "MAÎTRE ANTOINE VASSEUR · PERFUMISTA"
+    },
+    "newsletter": {
+      "eyebrow": "LISTA SILENCIOSA",
+      "title": "Para los singulares y los rumoreados.",
+      "body": "Nuevos lanzamientos, entrevistas con el perfumista, eventos privados. Tres cartas al año. No más.",
+      "placeholder": "tu correo",
+      "submit": "SUSCRIBIRSE",
+      "success": "RECIBIDO. ESTÁS EN LA LISTA SILENCIOSA.",
+      "error": "INTRODUCE UN CORREO VÁLIDO."
     }
   },
   "audio": {

@@ -51,6 +51,44 @@
     },
     "links": {
       "styleguide": "View design system →"
+    },
+    "featured": {
+      "eyebrow": "FEATURED FRAGRANCES",
+      "title": "Three compositions worth slowing down for.",
+      "subtitle": "Hand-picked by the perfumer this season. Each one a different temperature.",
+      "from": "FROM",
+      "explore": "EXPLORE",
+      "see_all": "SEE ALL TWENTY"
+    },
+    "stats": {
+      "eyebrow": "BY THE NUMBERS",
+      "title": "An atelier of patience.",
+      "fragrances": "FRAGRANCES",
+      "perfumers": "PERFUMERS",
+      "months_suffix": "M",
+      "months_label": "PER ESSENCE",
+      "cities": "CITIES"
+    },
+    "maison_teaser": {
+      "eyebrow": "THE MAISON",
+      "title": "The fire does not transform the rose; it only convinces it to remember itself.",
+      "body_1": "We compose in oils, alone, until the final week. Eight perfumers, three workshops, twelve commissions a year. No more.",
+      "body_2": "From the morning harvest in Grasse to the wax-sealed flacon, every essence takes between fourteen and twenty-four months. We never release on a deadline.",
+      "cta": "READ THE LETTERS",
+      "image_alt": "Antique copper alembic at the maison's workshop."
+    },
+    "pull_quote": {
+      "quote": "Patience is not a virtue in our cellar. It is the only available material.",
+      "attribution": "MAÎTRE ANTOINE VASSEUR · PERFUMER"
+    },
+    "newsletter": {
+      "eyebrow": "QUIET LIST",
+      "title": "For the rare and the rumored.",
+      "body": "New releases, perfumer interviews, private events. Three letters a year. No more.",
+      "placeholder": "your email",
+      "submit": "SUBSCRIBE",
+      "success": "RECEIVED. YOU ARE ON THE QUIET LIST.",
+      "error": "ENTER A VALID EMAIL."
     }
   },
   "audio": {

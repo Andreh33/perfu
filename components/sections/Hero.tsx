@@ -1,8 +1,7 @@
-// Hero — minimalist centred QASR-style composition. The animated liquid
-// gold background is now mounted GLOBALLY in the layout root
-// (<GlobalLiquidGoldBackground/>) so it covers every page; the Hero just
-// reserves a 100svh viewport and centres the editorial type overlay on
-// top of the global atmosphere.
+// Hero — large editorial centred composition. The animated liquid gold
+// is mounted globally in the layout root (<GlobalLiquidGoldBackground/>),
+// so the Hero is just a transparent 100svh stage for centred type and a
+// scroll indicator.
 
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
@@ -23,116 +22,143 @@ export async function Hero({ locale }: HeroProps) {
     <section
       id="hero"
       data-section="hero"
-      className="relative w-full h-[100svh] min-h-[640px] overflow-hidden"
+      className="relative w-full h-[100svh] min-h-[720px] overflow-hidden"
     >
-      <div className="relative h-full w-full">
-        <div className="absolute inset-0 grid place-items-center text-center px-[var(--space-5)]">
-          <div className="flex flex-col items-center">
-            {/* Eyebrow — ultra-thin tracking, ivory at 40% opacity */}
-            <p
-              className="font-body uppercase text-[10px] md:text-[11px] mb-[var(--space-6)] md:mb-[var(--space-7)]"
-              style={{
-                letterSpacing: "0.55em",
-                color: "rgba(244, 228, 188, 0.5)",
-                textIndent: "0.55em", // compensate the trailing space lost to letter-spacing
-              }}
-            >
-              {t("eyebrow")}
-            </p>
+      <div className="absolute inset-0 grid place-items-center text-center px-[var(--space-5)]">
+        <div className="flex flex-col items-center">
+          {/* Eyebrow */}
+          <p
+            className="font-body uppercase text-[11px] md:text-[12px] mb-[var(--space-7)] md:mb-[var(--space-8)]"
+            style={{
+              letterSpacing: "0.55em",
+              color: "rgba(244, 228, 188, 0.55)",
+              textIndent: "0.55em",
+            }}
+          >
+            {t("eyebrow")}
+          </p>
 
-            {/* Wordmark — Fraunces extralight, very wide tracking. On RTL
-                it switches to Arabic Naskh display. */}
-            <h1
-              className={`font-display font-extralight leading-[0.92] text-[var(--ink-100)] ${
-                isRtl ? "font-arabic-display" : ""
-              }`}
+          {/* Massive wordmark */}
+          <h1
+            className={`font-display font-extralight leading-[0.9] ${isRtl ? "font-arabic-display" : ""}`}
+            style={{
+              fontSize: "clamp(4rem, 13vw, 11rem)",
+              letterSpacing: isRtl ? "0" : "0.22em",
+              fontWeight: 200,
+              color: "#f4e4bc",
+              textShadow: "0 0 80px rgba(244, 228, 188, 0.2)",
+            }}
+          >
+            {wordmark}
+          </h1>
+          {wordmarkSub && (
+            <h2
+              className="font-display font-extralight leading-[0.9] mt-[var(--space-2)] md:mt-[var(--space-3)]"
               style={{
-                fontSize: "clamp(3.5rem, 9vw, 7.5rem)",
-                letterSpacing: isRtl ? "0" : "0.24em",
+                fontSize: "clamp(4rem, 13vw, 11rem)",
+                letterSpacing: "0.22em",
                 fontWeight: 200,
                 color: "#f4e4bc",
-                textShadow: "0 0 60px rgba(244, 228, 188, 0.18)",
+                textShadow: "0 0 80px rgba(244, 228, 188, 0.2)",
               }}
             >
-              {wordmark}
-            </h1>
-            {wordmarkSub && (
-              <h2
-                className="font-display font-extralight leading-[0.92] mt-[var(--space-2)]"
-                style={{
-                  fontSize: "clamp(3.5rem, 9vw, 7.5rem)",
-                  letterSpacing: "0.24em",
-                  fontWeight: 200,
-                  color: "#f4e4bc",
-                  textShadow: "0 0 60px rgba(244, 228, 188, 0.18)",
-                }}
-              >
-                {wordmarkSub}
-              </h2>
-            )}
+              {wordmarkSub}
+            </h2>
+          )}
 
-            {/* Gold divider — thin gradient line, fades at both ends. */}
-            <div
-              aria-hidden
-              className="mx-auto my-[var(--space-7)] md:my-[var(--space-8)] h-px w-24 md:w-32"
-              style={{
-                background:
-                  "linear-gradient(to right, transparent 0%, #d4af37 50%, transparent 100%)",
-              }}
-            />
+          {/* Gold divider */}
+          <div
+            aria-hidden
+            className="mx-auto my-[var(--space-8)] md:my-[var(--space-9)] h-px w-32 md:w-40"
+            style={{
+              background:
+                "linear-gradient(to right, transparent 0%, #d4af37 50%, transparent 100%)",
+            }}
+          />
 
-            {/* Subtitle — italic, ultra-tracked, ivory at 60% */}
-            <p
-              className={`font-display italic mb-[var(--space-7)] md:mb-[var(--space-8)] max-w-[44ch] ${
-                isRtl ? "font-arabic-display" : ""
-              }`}
-              style={{
-                fontSize: "clamp(0.72rem, 0.9vw, 0.82rem)",
-                letterSpacing: isRtl ? "0" : "0.42em",
-                color: "rgba(244, 228, 188, 0.62)",
-                textTransform: isRtl ? "none" : "lowercase",
-                lineHeight: 1.7,
-              }}
-            >
-              {t("subtitle")}
-            </p>
+          {/* Subtitle — bigger and richer */}
+          <p
+            className={`font-display italic mb-[var(--space-8)] max-w-[52ch] ${isRtl ? "font-arabic-display" : ""}`}
+            style={{
+              fontSize: "clamp(0.95rem, 1.3vw, 1.15rem)",
+              letterSpacing: isRtl ? "0" : "0.4em",
+              color: "rgba(244, 228, 188, 0.75)",
+              textTransform: isRtl ? "none" : "lowercase",
+              lineHeight: 1.7,
+            }}
+          >
+            {t("subtitle")}
+          </p>
 
-            {/* CTA — same ultra-tracked refinement as the eyebrow, but in
-                gold so it reads as the affordance. Underline draws on hover. */}
+          {/* Twin CTAs — primary gold + ghost ivory */}
+          <div className="flex flex-col sm:flex-row items-center gap-[var(--space-5)] md:gap-[var(--space-7)] mt-[var(--space-4)]">
             <Link
               href={`/${locale}/atelier`}
-              className="group inline-block uppercase font-body"
+              className="group inline-flex items-center gap-[var(--space-3)] uppercase font-body border border-[#d4af37]/60 hover:border-[#d4af37] hover:bg-[#d4af37]/10 transition-all duration-[var(--duration-medium)] ease-[var(--ease-soft-expo)] px-[var(--space-7)] py-[var(--space-5)]"
+              style={{
+                fontSize: "12px",
+                letterSpacing: "0.4em",
+                color: "#d4af37",
+                textIndent: "0.4em",
+              }}
+            >
+              {t("cta").replace(/[→←]\s*$/, "").trim()}
+              <span aria-hidden className="hero-arrow inline-block">
+                {isRtl ? "←" : "→"}
+              </span>
+            </Link>
+            <Link
+              href={`/${locale}/maison`}
+              className="group inline-flex items-center gap-[var(--space-2)] uppercase font-body"
               style={{
                 fontSize: "11px",
-                letterSpacing: "0.55em",
-                color: "#d4af37",
-                textIndent: "0.55em",
+                letterSpacing: "0.4em",
+                color: "rgba(244, 228, 188, 0.7)",
+                textIndent: "0.4em",
               }}
             >
               <span className="relative">
-                {t("cta").replace(/[→←]\s*$/, "").trim()}
+                {isRtl ? "تعرّف على الدار" : "DISCOVER THE MAISON"}
                 <span
                   aria-hidden
-                  className="absolute -bottom-1 left-0 right-0 h-px origin-center scale-x-0 bg-[#d4af37] transition-transform duration-[var(--duration-medium)] ease-[var(--ease-soft-expo)] group-hover:scale-x-100"
+                  className="absolute -bottom-1 left-0 right-0 h-px scale-x-0 origin-center bg-current transition-transform duration-[var(--duration-medium)] ease-[var(--ease-soft-expo)] group-hover:scale-x-100"
                 />
               </span>
             </Link>
-
-            {/* Maison signature beneath — the tiny "n° / edition" detail
-                that anchors the composition. */}
-            <p
-              className="font-body uppercase mt-[var(--space-9)] md:mt-[var(--space-10)]"
-              style={{
-                fontSize: "9px",
-                letterSpacing: "0.65em",
-                color: "rgba(244, 228, 188, 0.28)",
-                textIndent: "0.65em",
-              }}
-            >
-              {tCommon("site_name")} · MMXXVI
-            </p>
           </div>
+
+          {/* Maison signature */}
+          <p
+            className="font-body uppercase mt-[var(--space-10)] md:mt-[var(--space-11)]"
+            style={{
+              fontSize: "10px",
+              letterSpacing: "0.6em",
+              color: "rgba(244, 228, 188, 0.35)",
+              textIndent: "0.6em",
+            }}
+          >
+            {tCommon("site_name")} · MMXXVI
+          </p>
         </div>
+      </div>
+
+      {/* Scroll indicator — bottom-centre, a hairline with a falling dot. */}
+      <div
+        aria-hidden
+        className="absolute bottom-[var(--space-6)] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[var(--space-3)]"
+      >
+        <span
+          className="font-body uppercase"
+          style={{
+            fontSize: "9px",
+            letterSpacing: "0.5em",
+            color: "rgba(244, 228, 188, 0.45)",
+            textIndent: "0.5em",
+          }}
+        >
+          {isRtl ? "اسحب للأسفل" : "SCROLL"}
+        </span>
+        <span className="hero-scroll-line" />
       </div>
     </section>
   );
