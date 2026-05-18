@@ -5,6 +5,7 @@ import {
   Noto_Naskh_Arabic,
   IBM_Plex_Sans_Arabic,
   Aboreto,
+  Rakkas,
 } from "next/font/google";
 
 export const fraunces = Fraunces({
@@ -45,13 +46,22 @@ export const plexArabic = IBM_Plex_Sans_Arabic({
   weight: ["400", "500"],
 });
 
-// Aboreto — Latin display face designed to evoke Arabic calligraphy
-// (geometric strokes, tall ascenders, classical bone structure). Used
-// for the brand wordmark to give 'PERFUMES DUBAI' a Maghreb/Levantine
-// editorial feel without losing Latin legibility.
+// Aboreto — kept for any secondary display use (geometric Latin with
+// slight Arabic flavour). Not the brand wordmark anymore.
 export const aboreto = Aboreto({
   subsets: ["latin"],
   variable: "--font-aboreto",
+  display: "swap",
+  weight: ["400"],
+});
+
+// Rakkas — Latin display face specifically designed to look like Arabic
+// Naskh calligraphy. The letters carry the bowls, ascenders, terminal
+// flicks and rhythm of Arabic script while remaining Latin-readable.
+// THIS is the brand wordmark — drama and Maghreb identity together.
+export const rakkas = Rakkas({
+  subsets: ["latin"],
+  variable: "--font-rakkas",
   display: "swap",
   weight: ["400"],
 });
@@ -63,4 +73,5 @@ export const fontVariables = [
   notoNaskh.variable,
   plexArabic.variable,
   aboreto.variable,
+  rakkas.variable,
 ].join(" ");

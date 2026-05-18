@@ -74,7 +74,7 @@
   --duration-slow: 1100ms;
   --duration-cinematic: 1800ms;
 
-  --font-wordmark: var(--font-aboreto), "Cinzel", Georgia, serif;
+  --font-wordmark: var(--font-rakkas), var(--font-aboreto), Georgia, serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;

@@ -39,18 +39,20 @@ export async function Hero({ locale }: HeroProps) {
             {t("eyebrow")}
           </p>
 
-          {/* Wordmark with per-letter hover lift. Aboreto for Latin,
-              Naskh for Arabic. */}
+          {/* Wordmark — Rakkas (Latin styled as Arabic Naskh script)
+              for ES/EN, Noto Naskh for AR. Rakkas brings the swooping
+              bowls, ascenders and terminal flicks of Arabic calligraphy
+              to Latin letters; the brand reads genuinely Levantine. */}
           <h1
             className={isRtl ? "font-arabic-display" : ""}
             style={{
               fontFamily: isRtl ? undefined : "var(--font-wordmark)",
-              fontSize: "clamp(3rem, 11vw, 9.5rem)",
-              letterSpacing: isRtl ? "0" : "0.16em",
+              fontSize: "clamp(3.5rem, 12vw, 10rem)",
+              letterSpacing: isRtl ? "0" : "0.06em",
               fontWeight: 400,
               lineHeight: 0.95,
               color: "#f4e4bc",
-              textShadow: "0 0 80px rgba(244, 228, 188, 0.18)",
+              textShadow: "0 0 80px rgba(244, 228, 188, 0.22)",
             }}
           >
             {isRtl ? (
@@ -61,19 +63,37 @@ export async function Hero({ locale }: HeroProps) {
           </h1>
           {wordmarkSub && (
             <h2
-              className="mt-[var(--space-2)] md:mt-[var(--space-3)]"
+              className="mt-[var(--space-1)] md:mt-[var(--space-2)]"
               style={{
                 fontFamily: "var(--font-wordmark)",
-                fontSize: "clamp(3rem, 11vw, 9.5rem)",
-                letterSpacing: "0.16em",
+                fontSize: "clamp(3.5rem, 12vw, 10rem)",
+                letterSpacing: "0.06em",
                 fontWeight: 400,
                 lineHeight: 0.95,
                 color: "#f4e4bc",
-                textShadow: "0 0 80px rgba(244, 228, 188, 0.18)",
+                textShadow: "0 0 80px rgba(244, 228, 188, 0.22)",
               }}
             >
               <HeroWordmark text={wordmarkSub} ariaLabel={wordmarkSub} />
             </h2>
+          )}
+          {/* Arabic subtitle below the Latin wordmark — present on all
+              locales to anchor the maison's heritage. */}
+          {!isRtl && (
+            <p
+              aria-hidden
+              dir="rtl"
+              lang="ar"
+              className="font-arabic-display mt-[var(--space-5)] md:mt-[var(--space-6)]"
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                letterSpacing: 0,
+                color: "rgba(212, 175, 55, 0.55)",
+                fontWeight: 400,
+              }}
+            >
+              عطور دبي
+            </p>
           )}
 
           {/* Gold divider */}
