@@ -14,9 +14,9 @@ interface Props {
 }
 
 const STRENGTH = {
-  subtle:   { scale: 14, opacity: 0.45, orbOpacity: 0.7,  turbDur: 32 },
-  balanced: { scale: 24, opacity: 0.65, orbOpacity: 0.85, turbDur: 26 },
-  opulent:  { scale: 38, opacity: 0.82, orbOpacity: 1.0,  turbDur: 22 },
+  subtle:   { scale: 16, opacity: 0.55, orbOpacity: 0.8,  turbDur: 28 },
+  balanced: { scale: 30, opacity: 0.75, orbOpacity: 0.95, turbDur: 22 },
+  opulent:  { scale: 50, opacity: 0.92, orbOpacity: 1.0,  turbDur: 18 },
 } as const;
 
 export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}) {
@@ -77,7 +77,7 @@ export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}
             filter: "blur(180px)",
             background:
               "radial-gradient(circle, rgba(244, 207, 113, 0.55) 0%, rgba(212, 175, 55, 0.22) 45%, transparent 75%)",
-            animation: "lgb-mega-a 42s ease-in-out infinite alternate",
+            animation: "lgb-mega-a 28s ease-in-out infinite",
           }}
         />
         <span
@@ -91,7 +91,7 @@ export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}
             filter: "blur(200px)",
             background:
               "radial-gradient(circle, rgba(212, 175, 55, 0.5) 0%, rgba(160, 110, 50, 0.2) 45%, transparent 75%)",
-            animation: "lgb-mega-b 56s ease-in-out infinite alternate",
+            animation: "lgb-mega-b 38s ease-in-out infinite",
           }}
         />
         <span
@@ -105,7 +105,7 @@ export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}
             filter: "blur(160px)",
             background:
               "radial-gradient(circle, rgba(244, 228, 188, 0.32) 0%, rgba(201, 146, 138, 0.14) 45%, transparent 75%)",
-            animation: "lgb-mega-c 48s ease-in-out infinite alternate",
+            animation: "lgb-mega-c 32s ease-in-out infinite",
           }}
         />
       </div>
@@ -133,18 +133,42 @@ export function GlobalLiquidGoldBackground({ intensity = "opulent" }: Props = {}
         }}
       />
 
-      {/* SVG turbulence filter — distorts the central gold mass. */}
+      {/* SVG turbulence filter. CRITICAL: the seed and baseFrequency must be
+          animated via SMIL <animate> elements — `style.animationDuration` on
+          <feTurbulence> is ignored, the prior build looked static. We animate
+          baseFrequency through 3 keyframes and seed through 3 different
+          integers so the displacement field morphs continuously. The mesh
+          above + the displaced output reads as molten gold flowing. */}
       <svg aria-hidden focusable="false" className="absolute -z-10 h-0 w-0">
         <defs>
-          <filter id={filterId} x="-20%" y="-20%" width="140%" height="140%">
+          <filter id={filterId} x="-30%" y="-30%" width="160%" height="160%">
             <feTurbulence
               type="fractalNoise"
-              baseFrequency="0.005 0.008"
+              baseFrequency="0.006 0.010"
               numOctaves={2}
               seed={4}
-              style={{ animationDuration: `${s.turbDur}s` }}
-            />
-            <feDisplacementMap in="SourceGraphic" scale={s.scale} />
+            >
+              <animate
+                attributeName="baseFrequency"
+                dur={`${s.turbDur}s`}
+                values="0.006 0.010; 0.012 0.006; 0.004 0.014; 0.006 0.010"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="seed"
+                dur={`${s.turbDur * 1.7}s`}
+                values="4; 9; 17; 23; 4"
+                repeatCount="indefinite"
+              />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale={s.scale}>
+              <animate
+                attributeName="scale"
+                dur={`${s.turbDur}s`}
+                values={`${s.scale}; ${s.scale * 1.4}; ${s.scale * 0.7}; ${s.scale}`}
+                repeatCount="indefinite"
+              />
+            </feDisplacementMap>
           </filter>
         </defs>
       </svg>
