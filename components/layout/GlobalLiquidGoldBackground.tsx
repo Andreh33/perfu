@@ -228,6 +228,12 @@ export function GlobalLiquidGoldBackground(_props: Props = {}) {
         className="block h-full w-full"
         style={{ display: "block" }}
       />
+      {/* 70% black overlay — tames the shader so content reads cleanly
+          on top without the gold competing for attention. */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "rgba(0, 0, 0, 0.7)" }}
+      />
     </div>
   );
 }
