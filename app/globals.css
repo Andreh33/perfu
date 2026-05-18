@@ -277,18 +277,186 @@ body::after {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────
+   AMBIENT BACKGROUND · drifting gold orbs + shimmer + pulse
+   Rendered by <AmbientBackground/> in the layout root. Sits BELOW
+   the vignette so the corners darken the orbs. Pure CSS, GPU only
+   (transform + opacity), reduced-motion aware. Below z:2 vignette
+   and z:3 main, above z:0 ambient halo on body.
+   ─────────────────────────────────────────────────────────────── */
+
+.pd-orb {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(100px);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  will-change: transform, opacity;
+}
+
+.pd-orb-1 {
+  width: 640px;
+  height: 640px;
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(212, 182, 119, 0.9) 0%,
+    rgba(184, 147, 90, 0.4) 35%,
+    rgba(142, 110, 63, 0.15) 60%,
+    transparent 80%
+  );
+  animation: pd-drift-1 38s ease-in-out infinite alternate;
+}
+
+.pd-orb-2 {
+  width: 820px;
+  height: 820px;
+  top: 25%;
+  right: -200px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(184, 147, 90, 0.85) 0%,
+    rgba(142, 110, 63, 0.35) 40%,
+    rgba(92, 70, 40, 0.12) 65%,
+    transparent 85%
+  );
+  animation: pd-drift-2 52s ease-in-out infinite alternate;
+}
+
+.pd-orb-3 {
+  width: 540px;
+  height: 540px;
+  bottom: -160px;
+  left: 35%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(201, 146, 138, 0.55) 0%,
+    rgba(184, 147, 90, 0.25) 45%,
+    transparent 80%
+  );
+  animation: pd-drift-3 46s ease-in-out infinite alternate;
+}
+
+@keyframes pd-drift-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(60px, 80px, 0) scale(1.08);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-30px, 140px, 0) scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+@keyframes pd-drift-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(-90px, -60px, 0) scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(40px, 100px, 0) scale(0.92);
+    opacity: 0.4;
+  }
+}
+
+@keyframes pd-drift-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate3d(80px, -100px, 0) scale(1.15);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(-60px, -40px, 0) scale(0.98);
+    opacity: 0.35;
+  }
+}
+
+.pd-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(212, 182, 119, 0.06) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  background-position: -50% 50%;
+  animation: pd-shimmer-sweep 24s linear infinite;
+  mix-blend-mode: screen;
+  will-change: background-position;
+}
+
+@keyframes pd-shimmer-sweep {
+  from {
+    background-position: -50% 50%;
+  }
+  to {
+    background-position: 150% 50%;
+  }
+}
+
+.pd-pulse-warm {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 45%,
+    rgba(184, 147, 90, 0.08) 0%,
+    transparent 60%
+  );
+  animation: pd-pulse-breath 11s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes pd-pulse-breath {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-orb,
+  .pd-shimmer,
+  .pd-pulse-warm {
+    animation: none !important;
+  }
+  .pd-orb {
+    opacity: 0.4;
+  }
+}
+
 /* Vignette — top + bottom darker so the eye lands centre. Independent of
-   the ambient halo, drawn as a third fixed layer. */
+   the ambient halo, drawn as a third fixed layer. Z:3 so it sits ABOVE
+   the ambient orbs (z:2) and darkens them at the corners. Main is z:4. */
 .pd-vignette {
   position: fixed;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   background:
     radial-gradient(
       ellipse 140% 100% at 50% 50%,
-      transparent 55%,
-      rgba(0, 0, 0, 0.35) 100%
+      transparent 65%,
+      rgba(0, 0, 0, 0.25) 100%
     );
 }
 
@@ -323,11 +491,19 @@ body::after {
   );
 }
 
-/* All "real" content needs to sit above the ambient halo (z:0), grain (z:1)
-   and vignette (z:2). Apply to the layout root <main> if not already. */
+/* All "real" content needs to sit above the ambient halo (z:0), grain (z:1),
+   orbs (z:2), and vignette (z:3). Apply to the layout root <main>. */
 main {
   position: relative;
-  z-index: 3;
+  z-index: 4;
+}
+
+/* Navbar + Footer + chrome also need to sit above. */
+nav[aria-label],
+header,
+footer {
+  position: relative;
+  z-index: 4;
 }
 
 @media (pointer: fine) {

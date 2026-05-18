@@ -24,6 +24,7 @@ import {
   websiteSchema,
 } from "@/lib/seo/structured-data";
 import { GlobalErrorCapture } from "@/components/diagnostics/GlobalErrorCapture";
+import { AmbientBackground } from "@/components/layout/AmbientBackground";
 import "../globals.css";
 
 type LocaleParams = { locale: string };
@@ -137,6 +138,10 @@ export default async function LocaleLayout({
             Lenis can take over scroll. It receives copy as plain props from a
             server wrapper, so it does not depend on client hydration. */}
         <GlobalErrorCapture />
+        {/* Ambient atmospheric background — drifting gold orbs + shimmer +
+            slow warm pulse. Sits between the body bg gradients (z:0) and
+            the page-level vignette (z:2). */}
+        <AmbientBackground />
         {/* Global vignette — sits above body bg + ambient halo + grain.
             Drawn as a discrete element (not a body pseudo) so it does NOT
             interfere with React reconciliation. */}
