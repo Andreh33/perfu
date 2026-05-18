@@ -278,6 +278,128 @@ body::after {
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   LIQUID GOLD BACKGROUND · used by <LiquidGoldBackground/>
+   Orbs drift independently, a shimmer sweep crosses the canvas,
+   and the SVG feTurbulence seed animates to shift the displacement
+   field beneath the gold gradient mesh.
+   ─────────────────────────────────────────────────────────────── */
+
+.lgb-orb {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform, opacity;
+}
+
+.lgb-orb-a {
+  width: 720px;
+  height: 720px;
+  top: -160px;
+  left: -160px;
+  background: radial-gradient(
+    circle,
+    rgba(244, 207, 113, 0.95) 0%,
+    rgba(212, 175, 55, 0.45) 35%,
+    rgba(140, 95, 35, 0.18) 65%,
+    transparent 85%
+  );
+  animation: lgb-drift-a 34s ease-in-out infinite alternate;
+}
+
+.lgb-orb-b {
+  width: 900px;
+  height: 900px;
+  top: 20%;
+  right: -240px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.9) 0%,
+    rgba(184, 134, 50, 0.4) 40%,
+    rgba(92, 60, 24, 0.15) 70%,
+    transparent 90%
+  );
+  animation: lgb-drift-b 48s ease-in-out infinite alternate;
+}
+
+.lgb-orb-c {
+  width: 600px;
+  height: 600px;
+  bottom: -180px;
+  left: 35%;
+  background: radial-gradient(
+    circle,
+    rgba(244, 228, 188, 0.65) 0%,
+    rgba(201, 146, 138, 0.3) 45%,
+    rgba(140, 80, 60, 0.12) 70%,
+    transparent 88%
+  );
+  animation: lgb-drift-c 42s ease-in-out infinite alternate;
+}
+
+@keyframes lgb-drift-a {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.9; }
+  50% { transform: translate3d(80px, 120px, 0) scale(1.12); opacity: 1; }
+  100% { transform: translate3d(-40px, 180px, 0) scale(0.95); opacity: 0.75; }
+}
+
+@keyframes lgb-drift-b {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
+  50% { transform: translate3d(-110px, -90px, 0) scale(1.15); opacity: 0.95; }
+  100% { transform: translate3d(60px, 140px, 0) scale(0.92); opacity: 0.65; }
+}
+
+@keyframes lgb-drift-c {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate3d(100px, -140px, 0) scale(1.2); opacity: 0.85; }
+  100% { transform: translate3d(-80px, -60px, 0) scale(1); opacity: 0.55; }
+}
+
+.lgb-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(244, 228, 188, 0.08) 50%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 240% 100%;
+  background-position: -60% 50%;
+  animation: lgb-sweep-anim 20s linear infinite;
+  mix-blend-mode: screen;
+  will-change: background-position;
+}
+
+@keyframes lgb-sweep-anim {
+  from { background-position: -60% 50%; }
+  to   { background-position: 160% 50%; }
+}
+
+/* Drive the feTurbulence baseFrequency over time. SVG animation properties
+   are not standardised across browsers via CSS, so we cycle the SEED via
+   <animate> attribute or — as here — leave seed static and rely on the
+   gradient orbs + sweep for visible motion. The keyframe below shifts the
+   filter's CSS variable in case future browsers expose it. Acts as a no-op
+   on current engines but documents intent. */
+@keyframes lgb-turb-anim {
+  0% { stop-color: #f4e4bc; }
+  100% { stop-color: #d4af37; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lgb-orb,
+  .lgb-sweep {
+    animation: none !important;
+  }
+  .lgb-orb-a { opacity: 0.7; }
+  .lgb-orb-b { opacity: 0.55; }
+  .lgb-orb-c { opacity: 0.45; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    AMBIENT BACKGROUND · drifting gold orbs + shimmer + pulse
    Rendered by <AmbientBackground/> in the layout root. Sits BELOW
    the vignette so the corners darken the orbs. Pure CSS, GPU only
